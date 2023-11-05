@@ -1,12 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Heart Disease Prediction System</title>
-</head>
-<body>
-    <h1>This is Ms. Khadiza</h1>
-    <p>Study at Leading University</p>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HDPS</title>
+    <link rel="stylesheet" href="static/css/style.css" />
+  </head>
+
+  <body>
+    <!-- ==========Header design=========== -->
+    <header class="header">
+      <a href="#" class="logo text-decoration-none">Heart DP. <img src="static/img/logo.png" alt="" /></a>
+
+      <nav class="navbar">
+        <a href="index.html" class="active text-decoration-none">Home</a>
+        <a href="#analysis" class="text-decoration-none">Analysis</a>
+        <a href="help.html" class="text-decoration-none">About</a>
+        <a href="#ourTeam" class="text-decoration-none">Our Team</a>
+      </nav>
+    </header>
+
+
+
+
+
+
+
+    <!-- === Sticky Navbar === -->
+    <script type="text/javascript">
+      window.addEventListener('scroll', function () {
+        var header = document.querySelector('.header')
+        header.classList.toggle('sticky', window.scrollY > 0)
+      })
+    </script>
+
+
+  </body>
 </html>
