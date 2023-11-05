@@ -1,45 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HDPS</title>
-    <link rel="stylesheet" href="static/css/style.css" />
-  </head>
 
-  <body>
-    <!-- ==========Header design=========== -->
-    <header class="header">
-      <a href="#" class="logo text-decoration-none">Heart DP. <img src="static/img/logo.png" alt="" /></a>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HDPS</title>
+  <link rel="stylesheet" href="static/css/style.css" />
+</head>
 
-      <nav class="navbar">
-        <a href="index.html" class="active text-decoration-none">Home</a>
-        <a href="#analysis" class="text-decoration-none">Analysis</a>
-        <a href="help.html" class="text-decoration-none">About</a>
-        <a href="#ourTeam" class="text-decoration-none">Our Team</a>
+<body>
+  <!-- ==========Header design=========== -->
+  <header class="header">
+    <a href="#" class="logo text-decoration-none">Heart DP. <img src="static/img/logo.png" alt="" /></a>
 
-      <div>
-        
-      </div>
+    <nav class="navbar">
+      <a href="index.html" class="active text-decoration-none">Home</a>
+      <a href="#analysis" class="text-decoration-none">Analysis</a>
+      <a href="help.html" class="text-decoration-none">About</a>
+      <a href="#ourTeam" class="text-decoration-none">Our Team</a>
 
-      </nav>
+      <!-- onclick="window.location.href='login.html';" -->
 
-    </header>
+      <button class="login-btn">Sign In</button>
+      <button class="signup-btn">Sign Up</button>
 
+    </nav>
 
-
-
+  </header>
 
 
+  <!-- ====== Home Page ======-->
 
-    <!-- === Sticky Navbar === -->
-    <script type="text/javascript">
-      window.addEventListener('scroll', function () {
-        var header = document.querySelector('.header')
-        header.classList.toggle('sticky', window.scrollY > 0)
-      })
-    </script>
+  <section class="home" id="home">
+    <div class="home-content">
+      <h1>Heart Disease Prediction Using Machine Learning Algorithm</h1>
+
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur quos dolor eos fugiat sint
+        distinctio animi eveniet tempore soluta, accusantium eligendi quia explicabo accusamus odio aliquam
+        officiis at dolore ab.</p>
+
+      <a href="#" class="text-decoration-none"> % Predict Now</a>
+
+    </div>
+
+    <div class="home-content-bg">
+      <img src="static/img/bg.svg" alt="Background Image">
+    </div>
+
+  </section>
 
 
-  </body>
+
+  <!-- === Sticky Navbar === -->
+  <script type="text/javascript">
+    window.addEventListener('scroll', function () {
+      var header = document.querySelector('.header')
+      header.classList.toggle('sticky', window.scrollY > 0)
+    })
+  </script>
+
+
+</body>
+
 </html>
