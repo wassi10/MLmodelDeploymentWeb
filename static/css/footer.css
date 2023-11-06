@@ -1,0 +1,79 @@
+
+/* === Footer === */
+footer {
+    height: 24.6rem;
+    padding: 0 15% 2rem;
+    background: #0A0E31;
+
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 5.5rem;
+    color: #fff;
+}
+
+.footer h2 img {
+    width: 1.6rem;
+    height: 1.6rem;
+}
+
+.footer .footer-title {
+
+    font-family: Poppins;
+    font-size: 1.5rem;
+    font-weight: 600;
+
+}
+
+.footer-icon {
+    display: flex;
+    gap: 1rem;
+    padding-top: .6rem;
+}
+
+.footer-icon img {
+    width: 2rem;
+    height: 2rem;
+}
+
+.footer p {
+
+    font-family: Poppins;
+    font-size: 1.3rem;
+    font-style: italic;
+    font-weight: 300;
+    opacity: 0.8;
+}
+
+.footer div a {
+    font-family: Poppins;
+    font-size: 1.3rem;
+    font-style: italic;
+    font-weight: 300;
+    text-decoration: none;
+    color: #fff;
+    opacity: 0.8;
+}
+
+.footer-navi {
+    display: flex;
+    gap: 1.3rem;
+    padding-top: 10px;
+}
+
+footer hr {
+    border: 0;
+    border-bottom: 1px solid #ccc;
+    margin: 2.5rem auto;
+    color: #FFF;
+    font-weight: 600;
+}
+
+.copyright {
+    text-align: center;
+    color: #FFF;
+    font-size: 1.2rem;
+    font-weight: 400;
+}
