@@ -4,7 +4,8 @@ from django.shortcuts import render
 def Welcome(request):
     return render(request, 'index.html')
 
-
+def Dashboard(request):
+    return render(request, 'homepage.html')
 
 
 

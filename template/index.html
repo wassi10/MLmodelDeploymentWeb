@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>HDPS</title>
   <link rel="stylesheet" href="static/css/style.css" />
+  <link rel="stylesheet" href="static/css/style.css" />
 </head>
 
 <body>
@@ -14,14 +15,18 @@
     <a href="#" class="logo text-decoration-none">Heart DP. <img src="static/img/logo.png" alt="" /></a>
 
     <nav class="navbar">
-      <a href="index.html" class="active text-decoration-none">Home</a>
-      <a href="#analysis" class="text-decoration-none">Analysis</a>
-      <a href="help.html" class="text-decoration-none">About</a>
+      <a href="" class="active text-decoration-none">Home</a>
+      <a href="#" class="text-decoration-none">Analysis</a>
+      <a href="#" class="text-decoration-none">About</a>
       <a href="#ourTeam" class="text-decoration-none">Our Team</a>
 
       <!-- onclick="window.location.href='login.html';" -->
 
-      <button class="login-btn">Sign In</button>
+      <a href= "{% url 'dashboard' %}" class="login-btn">Sign In</a>
+
+
+      <!-- <button class="login-btn" onclick="window.location.href='homepage.html';">Sign In</button> -->
+
       <button class="signup-btn">Sign Up</button>
 
     </nav>
