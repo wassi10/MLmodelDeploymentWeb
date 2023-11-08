@@ -30,7 +30,7 @@ html {
  h1{
     color: var(--gradient-1);
     margin-bottom: 3rem;
-    font-size: 4rem;
+    font-size: 3.5rem;
 }
 
 /* ===== Soctor list - css section ====== */
@@ -65,3 +65,5 @@ html {
     display: none;
     overflow: hidden;
   }
+
+  
