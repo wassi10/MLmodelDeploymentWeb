@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HDPS</title>
-    <link rel="stylesheet" href="static/css/sidebar_menu.css">
+    <link rel="stylesheet" href="static/css/sidebar.css">
     <link rel="stylesheet" href="static/css/doctor.css">
 
     <!-- ============ Font Awesome ============ -->
@@ -14,12 +14,12 @@
 </head>
 
 <body>
-    <!-- ==========Header design=========== -->
+    <!-- ========== Header Design =========== -->
     <header class="header">
         <a href="#" class="logo text-decoration-none">Heart DP. <img src="static/img/logo.png" alt="" /></a>
 
         <nav class="navbar">
-            <a href="{% url 'homepage'%}" class="active text-decoration-none">Home</a>
+            <a href="{% url 'homepage'%}" class="text-decoration-none">Home</a>
             <a href="#" class="text-decoration-none">Analysis</a>
             <a href="#" class="text-decoration-none">About</a>
             <a href="#" class="text-decoration-none">Our Team</a>
@@ -48,107 +48,435 @@
         <div class="data">
             <h1>Sylhet Doctor's and Hospital List</h1>
 
-            <h3>1. Sylhet MAG Osmani Medical College & Hospital</h3>
-            <p class="place-address">Address: Kajolshah, Sylhet <br>
-                Contact: +8801770313434, +8801716639393</p>
 
-            <div class="doctor-table">
-                <div style="width: 50%;">
-                    <h4>Dr. Md. Abdus Samad Azad</h4>
-                    <p> MBBS, FCPS (Surgery), MS (Cardiovascular & Thoracic Surgery) <br>
-                        Cardiovascular & Thoracic Surgeon <br>
-                        Assistant Professor, Cardiac Surgery <br>
-                        Sylhet MAG Osmani Medical College & Hospital</p>
+            <!-- == Osmani medical Info -->
+            <button type="button" class="collapsible">
+                <h2>1. Sylhet MAG Osmani Medical College & Hospital</h2>
+            </button>
+
+            <div class="doctor-content">
+
+                <p>Address: Kajolshah, Sylhet <br>
+                    Contact: +8801770313434, +8801716639393</p>
+
+                <!-- ====== Doctor info ======= -->
+                <div class="doctor-table">
+                    <div style="width: 50%;">
+                        <h4>Dr. Md. Abdus Samad Azad</h4>
+                        <p> MBBS, FCPS (Surgery), MS (Cardiovascular & Thoracic Surgery) <br>
+                            <span style="color: rgb(18, 6, 248);">Cardiovascular & Thoracic Surgeon <br></span>
+                            Assistant Professor, Cardiac Surgery <br>
+                            Sylhet MAG Osmani Medical College & Hospital
+                        </p>
+                    </div>
+
+                    <div style="width: 50%;">
+                        <h4>Chamber & Appointment</h4>
+                        Stadium Market, Sylhet <br>
+                        Address: 38, Stadium Market, Rikabi Bazar, Sylhet - 3100 <br>
+                        Visiting Hour: 6p to 8pm (Closed: Friday) <br>
+                        Appointment: +8801711905035
+                    </div>
                 </div>
 
-                <div style="width: 50%;">
-                    <h4>Chamber & Appointment</h4>
-                    Stadium Market, Sylhet <br>
-                    Address: 38, Stadium Market, Rikabi Bazar, Sylhet - 3100 <br>
-                    Visiting Hour: 6p to 8pm (Closed: Friday) <br>
-                    Appointment: +8801711905035 <br>
+                <div class="doctor-table">
+                    <div style="width: 50%;">
+                        <h4>Dr. Shishir Basak</h4>
+                        <p> MBBS (DMC), MCPS (Medicine), D-CARD (DU), MD (Cardiology), MRCP (UK) <br>
+                            Cardiology & Medicine Specialist <br>
+                            Associate Professor, Medicine <br>
+                            Sylhet MAG Osmani Medical College & Hospital
+                        </p>
+                    </div>
+
+                    <div style="width: 50%;">
+                        <h4>Chamber & Appointment</h4>
+                        Mount Adora Hospital, Akhalia, Sylhet <br>
+                        Address: Sylhet-Sunamganj Highway, Akhalia, Sylhet - 3100 <br>
+                        Visiting Hour: 4.30pm to 9pm (Closed: Friday) <br>
+                        Appointment: +8801726450182
+                    </div>
                 </div>
+
+                <div class="doctor-table">
+                    <div style="width: 50%;">
+                        <h4>Prof. Dr. Muhammad Shahabuddin</h4>
+                        <p> MBBS, MD (Cardiology) <br>
+                            Clinical & Interventional Cardiologist <br>
+                            Professor & Head, Cardiology <br>
+                            Sylhet MAG Osmani Medical College & Hospital <br>
+                        </p>
+                    </div>
+
+                    <div style="width: 50%;">
+                        <h4>Chamber & Appointment</h4>
+                        Mount Adora Hospital, Akhalia, Sylhet <br>
+                        Address: Sylhet-Sunamganj Highway, Akhalia, Sylhet - 3100 <br>
+                        Visiting Hour: 3pm to 10pm (Closed: Friday) <br>
+                        Appointment: +8801715067019
+                    </div>
+                </div>
+
+                <div class="doctor-table">
+                    <div style="width: 50%;">
+                        <h4>Dr. Md. Mokhlesur Rahman</h4>
+                        <p> MBBS, BCS (Health), MD (Cardiology) <br>
+                            Cardiology (Heart, Hypertension, Rheumatic Fever) Specialist <br>
+                            Associate Professor & Head, Cardiology <br>
+                            Sylhet MAG Osmani Medical College & Hospital
+                        </p>
+                    </div>
+
+                    <div style="width: 50%;">
+                        <h4>Chamber & Appointment</h4>
+                        Stadium Market, Sylhet <br>
+                        Address: 27, Stadium Market, Rikabi Bazar, Sylhet - 3100 <br>
+                        Visiting Hour: 5p to 8pm (Closed: Friday) <br>
+                        Appointment: +8801762233844
+                    </div>
+                </div>
+
+                <div class="doctor-table">
+                    <div style="width: 50%;">
+                        <h4>Dr. Mohammed Kamal Hossain Ovi</h4>
+                        <p>MBBS (SOMCH), BCS (Health), MD (Cardiology) BSMMU<br>
+                            <span style="color: rgb(18, 6, 248);">Heart Diseases & Medicine Specialist<br></span>
+                            Cardiologist, Cardiology <br>
+                            Sylhet MAG Osmani Medical College & Hospital
+                        </p>
+                    </div>
+
+                    <div style="width: 50%;">
+                        <h4>Chamber & Appointment</h4>
+                        Mount Adora Hospital, Akhalia, Sylhet <br>
+                        Address: Room - 1415, Sylhet-Sunamganj Highway, Akhalia, Sylhet - 3100 <br>
+                        Visiting Hour: 5pm to 9pm (Closed: Tues & Friday) <br>
+                        Appointment: +8801326543163
+                    </div>
+                </div>
+
+                <div class="doctor-table">
+                    <div style="width: 50%;">
+                        <h4>Dr. S.M. Habibullah Selim</h4>
+                        <p>MBBS (SOMCH), BCS (Health), MD (Cardiology) BSMMU<br>
+                            <span style="color: rgb(18, 6, 248);">Cardiology (Heart, Hypertension, Rheumatic Fever) &
+                                Medicine Specialist<br></span>
+                            Assistant Professor, Cardiology <br>
+                            Sylhet MAG Osmani Medical College & Hospital
+                        </p>
+                    </div>
+
+                    <div style="width: 50%;">
+                        <h4>Chamber & Appointment</h4>
+                        Medinova Medical Services, Sylhet <br>
+                        Address: 98, New Medical Road, Kajolshah, Sylhet - 3100 <br>
+                        Visiting Hour: 5pm to 8pm (Closed: Friday) <br>
+                        Appointment: +880821710918
+
+                    </div>
+                </div>
+
+                <div class="doctor-table">
+                    <div style="width: 50%;">
+                        <h4>Dr. Md. Anamur Rahman</h4>
+                        <p>MBBS, BCS (Health), MD (Cardiology)<br>
+                            <span style="color: rgb(18, 6, 248);">Cardiology (Heart Diseases, Hypertension, Rheumatic
+                                Fever) Specialist<br></span>
+                            Assistant Professor, Cardiology <br>
+                            Sylhet MAG Osmani Medical College & Hospital
+                        </p>
+                    </div>
+
+                    <div style="width: 50%;">
+                        <h4>Chamber & Appointment</h4>
+                        Mount Adora Hospital, Nayasarak, Sylhet <br>
+                        Address: Nayasarak Road, Mirboxtula, Nayasarak, Sylhet - 3100 <br>
+                        Visiting Hour: 5pm to 9pm (Closed: Friday) <br>
+                        Appointment: +8801972091261
+
+                    </div>
+                </div>
+
+                <div class="doctor-table">
+                    <div style="width: 50%;">
+                        <h4>Dr. Md. Fakhrul Islam</h4>
+                        <p>MBBS, BCS (Health), MD (Cardiology)<br>
+                            <span style="color: rgb(18, 6, 248);">Cardiology Specialist <br></span>
+                            Consultant, Cardiology <br>
+                            Sylhet MAG Osmani Medical College & Hospital
+                        </p>
+                    </div>
+
+                    <div style="width: 50%;">
+                        <h4>Chamber & Appointment</h4>
+                        Medi-Aid Diagnostic & Consultation Center <br>
+                        Address: Medical College Road, Modhushohid, Rikabi Bazar, Sylhet - 3100 <br>
+                        Visiting Hour: 5pm to 8pm (Closed: Friday) <br>
+                        Appointment: +8801711275902
+
+                    </div>
+                </div>
+
+            </div>
+            <!-- End osmani info -->
+
+            <!-- === North East Medical College & Hospital === -->
+            <button type="button" class="collapsible">
+                <h2>2. North East Medical College & Hospital</h2>
+            </button>
+
+            <div class="doctor-content">
+                <p>Address: Gohorpur Road, South Surma, Sylhet - 3100 <br>
+                    Contact: +8801715944733, +8801794448905
+                    <!-- ====== Doctor info ======= -->
+
+                <div class="doctor-table">
+                    <div style="width: 50%;">
+                        <h4>Dr. Md. Abdul Goni</h4>
+                        <p>MBBS (CU), D-CARD (BSMMU), PGT (Medicine & Cardiology) <br>
+                            Highly Trained in Pediatric Cardiology & Pediatric Echocardiography (India)<br>
+                            <span style="color: rgb(18, 6, 248);">Cardiology & Child Heart Diseases
+                                Specialist<br></span>
+                            Associate Professor, Cardiology <br>
+                            North East Medical College & Hospital
+                        </p>
+                    </div>
+
+                    <div style="width: 50%;">
+                        <h4>Chamber & Appointment</h4>
+                        Noorjahan Hospital, Sylhet <br>
+                        Address: Waves 1, Ritz Tower, Dargah Gate, Sylhet - 3100 <br>
+                        Visiting Hour: 8pm to 10pm (Sat, Mon & Wed) <br>
+                        Appointment: +8801306448363
+                    </div>
+                </div>
+
+                <div class="doctor-table">
+                    <div style="width: 50%;">
+                        <h4>Prof. Dr. Md. Faruque Uddin</h4>
+                        <p>MBBS, D-CARD, MD (Cardiology)<br>
+                            <span style="color: rgb(18, 6, 248);">Cardiology, Hypertension & Rheumatic Fever
+                                Specialist<br></span>
+                            Professor & Head, Cardiology<br>
+                            North East Medical College & Hospital
+                        </p>
+                    </div>
+
+                    <div style="width: 50%;">
+                        <h4>Chamber & Appointment</h4>
+                        Popular Medical Center, Sylhet <br>
+                        Address: New Medical Road, Kajolshah, Sylhet - 3100 <br>
+                        Visiting Hour: 5pm to 8pm (Closed: Friday) <br>
+                        Appointment: +8801711462103 <br>
+                    </div>
+                </div>
+
+                <div class="doctor-table">
+                    <div style="width: 50%;">
+                        <h4>Dr. Tanvir Hossain Chowdhury</h4>
+                        <p>MBBS, D-CARD, CCD (BIRDEM)<br>
+                            <span style="color: rgb(18, 6, 248);">Cardiology (Heart Diseases, Hypertension & Diabetes)
+                                Specialist<br></span>
+                            Consultant, Cardiology<br>
+                            North East Medical College & Hospital
+                        </p>
+                    </div>
+
+                    <div style="width: 50%;">
+                        <h4>Chamber & Appointment</h4>
+                        Noorjahan Hospital, Sylhet <br>
+                        Address: Waves 1, Ritz Tower, Dargah Gate, Sylhet - 3100 <br>
+                        Visiting Hour: 5pm to 8pm (Closed: Friday) <br>
+                        Appointment: +8801979005522
+                    </div>
+                </div>
+
+                <div class="doctor-table">
+                    <div style="width: 50%;">
+                        <h4>Dr. Md. Sharif Uddin</h4>
+                        <p>MBBS, D-CARD, CCD, MACC<br>
+                            <span style="color: rgb(18, 6, 248);">Heart Diseases, Medicine & Diabetes
+                                Specialist<br></span>
+                            Assistant Professor, Cardiology<br>
+                            North East Medical College & Hospital
+                        </p>
+                    </div>
+
+                    <div style="width: 50%;">
+                        <h4>Chamber & Appointment</h4>
+                        Labaid Diagnostic Limited, Sylhet <br>
+                        Address: House # 362-363, New Medical Road, Kajol Shah, Sylhet <br>
+                        Visiting Hour: 5pm to 8pm (Sun, Mon & Tue) <br>
+                        Appointment: +8801927867934
+                    </div>
+                </div>
+
             </div>
 
-            <div class="doctor-table">
-                <div style="width: 50%;">
-                    <h4>Dr. Shishir Basak</h4>
-                    <p> MBBS (DMC), MCPS (Medicine), D-CARD (DU), MD (Cardiology), MRCP (UK) <br>
-                        Cardiology & Medicine Specialist <br>
-                        Associate Professor, Medicine <br>
-                        Sylhet MAG Osmani Medical College & Hospital
-                    </p>
+            <!-- Al Haramain Hospital, Sylhet -->
+
+            <button type="button" class="collapsible">
+                <h2>3. Al Haramain Hospital, Sylhet</h2>
+            </button>
+
+            <div class="doctor-content">
+
+                <p>Address: Samato-30, Chali Bandar, Bishwa Road, Subhani Ghat, Sylhet <br>
+                    Contact: 10607, +8801931225555</p>
+
+                <!-- ====== Doctor info ======= -->
+
+                <div class="doctor-table">
+                    <div style="width: 50%;">
+                        <h4>Dr. Ajoy Kumar Dutta</h4>
+                        <p>MBBS, MD (Cardiology), NICVD<br>
+                            <span style="color: rgb(18, 6, 248);">Cardiology, Hypertension & Rheumatic Fever
+                                Specialist<br></span>
+                            Chief Consultant, Cardiology<br>
+                            Al Haramain Hospital Private Limited, Sylhet
+                        </p>
+                    </div>
+
+                    <div style="width: 50%;">
+                        <h4>Chamber & Appointment</h4>
+                        Al Haramain Hospital, Sylhet <br>
+                        Address: Samato-30, Chali Bandar, Bishwa Road, Subhani Ghat, Sylhet <br>
+                        Visiting Hour: 10am to 5pm (Closed: Friday) <br>
+                        Appointment: +8801931225555
+                    </div>
                 </div>
 
-                <div style="width: 50%;">
-                    <h4>Chamber & Appointment</h4>
-                    Mount Adora Hospital, Akhalia, Sylhet <br>
-                    Address: Sylhet-Sunamganj Highway, Akhalia, Sylhet - 3100 <br>
-                    Visiting Hour: 4.30pm to 9pm (Closed: Friday) <br>
-                    Appointment: +8801726450182
+                <div class="doctor-table">
+                    <div style="width: 50%;">
+                        <h4>Dr. Debashish Paul</h4>
+                        <p>MBBS, MD (Cardiology), Training in Echocardiography (India)<br>
+                            <span style="color: rgb(18, 6, 248);">Cardiology, Hypertension & Rheumatic Fever
+                                Specialist<br></span>
+                            Chief Consultant, Cardiology<br>
+                            Al Haramain Hospital Private Limited, Sylhet
+                        </p>
+                    </div>
+
+                    <div style="width: 50%;">
+                        <h4>Chamber & Appointment</h4>
+                        Al Haramain Hospital, Sylhet <br>
+                        Address: Samato-30, Chali Bandar, Bishwa Road, Subhani Ghat, Sylhet <br>
+                        Visiting Hour: 10am to 5pm (Closed: Friday) <br>
+                        Appointment: +8801931225555
+                    </div>
                 </div>
+
+                <div class="doctor-table">
+                    <div style="width: 50%;">
+                        <h4>Dr. Md. Suhail Alam</h4>
+                        <p>MBBS, MD (Cardiology, BSMMU)<br>
+                            <span style="color: rgb(18, 6, 248);">Cardiology, Heart Diseases & Rheumatic Fever
+                                Specialist<br></span>
+                            Consultant, Cardiology<br>
+                            Al Haramain Hospital Private Limited, Sylhet
+                        </p>
+                    </div>
+
+                    <div style="width: 50%;">
+                        <h4>Chamber & Appointment</h4>
+                        Al Haramain Hospital, Sylhet <br>
+                        Address: Samato-30, Chali Bandar, Bishwa Road, Subhani Ghat, Sylhet <br>
+                        Visiting Hour: Unknown. Please call to know visiting hour <br>
+                        Appointment: +8801931225555
+                    </div>
+                </div>
+
             </div>
-            <div class="doctor-table">
-                <div>
-                    <h4>Dr. Md. Abdus Samad Azad</h4>
-                    <p> MBBS, FCPS (Surgery), MS (Cardiovascular & Thoracic Surgery) <br>
-                        Cardiovascular & Thoracic Surgeon <br>
-                        Assistant Professor, Cardiac Surgery <br>
-                        Sylhet MAG Osmani Medical College & Hospital</p>
+
+
+            <!-- ===== Start Sylhet Women's ====== -->
+            <button type="button" class="collapsible">
+                <h2>4. Sylhet Womens Medical College & Hospital</h2>
+            </button>
+
+            <div class="doctor-content">
+
+                <p>Address: Mirboxtula, Sylhet <br>
+                    Contact: +8801712346858, +880821720222</p>
+
+                <!-- ====== Doctor info ======= -->
+
+                <div class="doctor-table">
+                    <div style="width: 50%;">
+                        <h4>Prof. Dr. K.M. Akhtaruzzaman</h4>
+                        <p>MBBS, DCM, MCPS (Medicine), MD (Cardiology)<br>
+                            <span style="color: rgb(18, 6, 248);">Cardiology (Heart, Hypertension, Rheumatic Fever) &
+                                Medicine Specialist<br></span>
+                            Professor & Head, Cardiology <br>
+                            Sylhet Womens Medical College & Hospital
+                        </p>
+                    </div>
+
+                    <div style="width: 50%;">
+                        <h4>Chamber & Appointment</h4>
+                        Mount Adora Hospital, Akhalia, Sylhet <br>
+                        Address: Sylhet-Sunamganj Highway, Akhalia, Sylhet - 3100 <br>
+                        Visiting Hour: 6pm to 10pm (Closed: Friday) <br>
+                        Appointment: +8801714000770
+                    </div>
                 </div>
 
-                <div>
-                    <h4>Chamber & Appointment</h4>
-                    Stadium Market, Sylhet <br>
-                    Address: 38, Stadium Market, Rikabi Bazar, Sylhet - 3100 <br>
-                    Visiting Hour: 6p to 8pm (Closed: Friday) <br>
-                    Appointment: +8801711905035 <br>
+                <div class="doctor-table">
+                    <div style="width: 50%;">
+                        <h4>Dr. Debashish Paul</h4>
+                        <p>MBBS, MD (Cardiology), Training in Echocardiography (India)<br>
+                            <span style="color: rgb(18, 6, 248);">Cardiology & Medicine Specialist<br></span>
+                            Associate Professor, Cardiology <br>
+                            Sylhet Womens Medical College & Hospital
+                        </p>
+                    </div>
+
+                    <div style="width: 50%;">
+                        <h4>Chamber & Appointment</h4>
+                        Trust Medical Services, Sylhet <br>
+                        Address: 16, Modhushahid, New Medical Road, Sylhet - 3100 <br>
+                        Visiting Hour: 5pm to 9pm (Closed: Friday) <br>
+                        Appointment: +8801746727154
+                    </div>
                 </div>
+
             </div>
-            <div class="doctor-table">
-                <div>
-                    <h4>Dr. Md. Abdus Samad Azad</h4>
-                    <p> MBBS, FCPS (Surgery), MS (Cardiovascular & Thoracic Surgery) <br>
-                        Cardiovascular & Thoracic Surgeon <br>
-                        Assistant Professor, Cardiac Surgery <br>
-                        Sylhet MAG Osmani Medical College & Hospital</p>
-                </div>
+            <!-- End Sylhet Women's -->
 
-                <div>
-                    <h4>Chamber & Appointment</h4>
-                    Stadium Market, Sylhet <br>
-                    Address: 38, Stadium Market, Rikabi Bazar, Sylhet - 3100 <br>
-                    Visiting Hour: 6p to 8pm (Closed: Friday) <br>
-                    Appointment: +8801711905035 <br>
-                </div>
-            </div>
-            <div class="doctor-table">
-                <div>
-                    <h4>Dr. Md. Abdus Samad Azad</h4>
-                    <p> MBBS, FCPS (Surgery), MS (Cardiovascular & Thoracic Surgery) <br>
-                        Cardiovascular & Thoracic Surgeon <br>
-                        Assistant Professor, Cardiac Surgery <br>
-                        Sylhet MAG Osmani Medical College & Hospital</p>
-                </div>
+            <button type="button" class="collapsible">
+                <h2>5. Jalalabad Ragib Rabeya Medical College Hospital</h2>
+            </button>
 
-                <div>
-                    <h4>Chamber & Appointment</h4>
-                    Stadium Market, Sylhet <br>
-                    Address: 38, Stadium Market, Rikabi Bazar, Sylhet - 3100 <br>
-                    Visiting Hour: 6p to 8pm (Closed: Friday) <br>
-                    Appointment: +8801711905035 <br>
-                </div>
-            </div>
+            <button type="button" class="collapsible">
+                <h2>6. Mount Adora Hospital, Akhalia, Sylhet</h2>
+            </button>
+
+            <button type="button" class="collapsible">
+                <h2>7. Ibn Sina Hospital Ltd, Sylhet</h2>
+            </button>
 
 
-            <h3>2. Sylhet Womens Medical College & Hospital</h3>
-            <h3>3. Al Haramain Hospital, Sylhet</h3>
-            <h3>4. Ibn Sina Hospital Ltd, Sylhet</h3>
-            <h3>5. Jalalabad Ragib Rabeya Medical College Hospital</h3>
-            <h3>6. Mount Adora Hospital, Akhalia, Sylhet</h3>
         </div>
 
     </section>
+
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+
+        for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                } else {
+                    content.style.display = "block";
+                }
+            });
+        }
+    </script>
+
 </body>
 
 </html>

@@ -33,9 +33,7 @@ html {
     font-size: 4rem;
 }
 
-.place-address{
-    margin-left: 18px;
-}
+/* doctor list css section */
 
 .doctor-table{
     display: flex;
