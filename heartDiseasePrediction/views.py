@@ -7,10 +7,6 @@ def Welcome(request):
 def Dashboard(request):
     return render(request, 'homepage.html')
 
-# Doctor and hospital list Section
-def DoctorAndHospital(request):
-    return render(request, 'doctorHospitalList.html')
-
 # symptoms.html
 def Symptoms(request):
     return render(request, 'symptoms.html')
@@ -18,6 +14,10 @@ def Symptoms(request):
 # prevention.html
 def Prevention(request):
     return render(request, 'prevention.html')
+
+# Doctor and hospital list Section
+def DoctorAndHospital(request):
+    return render(request, 'doctorHospitalList.html')
 
 
 
