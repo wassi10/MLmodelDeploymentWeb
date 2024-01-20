@@ -234,3 +234,78 @@ footer hr {
     font-weight: 400;
 }
 
+/* === Team Section === */
+
+.team-container .row{
+    width: 60%;
+    margin: auto;
+}
+.team-container .row .title{
+    text-align: center;
+}
+.team-container .row .title h1{
+    font-size: 40px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--gradient-1, linear-gradient(141deg, #3A8EF6 0%, #6F3AFA 100%));
+}
+.team-container .row .title h1{
+    font-size: 40px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--gradient-1, linear-gradient(141deg, #3A8EF6 0%, #6F3AFA 100%));
+}
+.team-container .row .title p{
+    font-size: 18px;
+    margin: 15px 0px;
+    color: var(--text-color);
+}
+
+.team-container .team-card{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 30px;
+    margin-top: 50px;
+}
+.team-container .team-card .card{
+    width: 100%;
+    background: var(--bg-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 36px;
+    cursor: pointer;
+    /* border: 2px solid var(--gradient-1, linear-gradient(141deg, #3A8EF6 0%, #6F3AFA 100%)); */
+}
+.team-container .team-card .card:hover{
+    background: #ffffff;
+    border: 2px solid var(--gradient-1, linear-gradient(141deg, #3A8EF6 0%, #6F3AFA 100%));
+}
+.team-container .team-card .card .image-section img{
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    border: 2px solid var(--gradient-1, linear-gradient(141deg, #3A8EF6 0%, #6F3AFA 100%));
+}
+.team-container .team-card .card .team-content{
+    width: 100%;
+    text-align: center;
+}
+.team-container .team-card .card .team-content h3{
+    font-size: 1.5rem;
+    margin-top: 15px;
+    color: var(--gradient-1, linear-gradient(141deg, #3A8EF6 0%, #6F3AFA 100%));
+}
+.team-container .team-card .card .team-content h4{
+    font-size: 1.3rem;
+    margin-top: 8px;
+    color: var(--text-color);
+}
+.team-container .team-card .card .team-content p{
+    font-size: 1.1rem;
+    margin: 12px 0px;
+    color: var(--text-color);
+    line-height: 1.5;
+}
