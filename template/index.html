@@ -16,7 +16,7 @@
     <nav class="navbar">
       <a href="{% url 'homepage'%}" class="active text-decoration-none">Home</a>
       <a href="#" class="text-decoration-none">Analysis</a>
-      <a href="#" class="text-decoration-none">About</a>
+      <a href="#about" class="text-decoration-none">About</a>
       <a href="#ourTeam" class="text-decoration-none">Our Team</a>
 
       <!-- onclick="window.location.href='login.html';" -->
@@ -53,11 +53,28 @@
 
   </section>
 
+  <section>
 
-  <section id="ourTeam">
-    <div class="our-team-section">
-      <div class="team-container">
+  </section>
 
+    <!-- === About Section ==== -->
+    <section id="about">
+      <div class="about">
+
+        <div class="details">
+          <h1>About us</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio laborum eius impedit facilis ducimus accusamus beatae labore error tempore et nam fugit modi at dolorem sint, earum dignissimos esse dolores ipsa voluptates veniam soluta! Quos, quo minima iure itaque aperiam explicabo, consectetur quibusdam quam, assumenda porro architecto. Vel libero odio rerum necessitatibus voluptate illo neque, obcaecati at provident impedit minus laboriosam officia nam ipsa nobis hic rem eius iusto, quasi error quaerat. Nihil saepe est mollitia nam et. Eligendi, officiis nobis reprehenderit tenetur sit asperiores libero expedita modi quas accusantium nisi maxime quos facere inventore esse doloremque veniam possimus sequi numquam iure ab nesciunt, est enim. Similique, vero? Doloribus dignissimos quos illo beatae. Inventore recusandae ut incidunt, commodi error ratione quos deserunt voluptates minima fugiat repudiandae maxime assumenda repellat distinctio dolore nostrum id dicta nobis asperiores molestias. Voluptate autem eligendi nobis nihil accusamus qui, sequi voluptatibus accusantium deserunt consectetur. Possimus.</p>
+        </div>
+
+        <div class="about-bg">
+          <img src="static/img/heart.png" alt="">
+        </div>
+
+      </div>
+    </section>
+
+  <section id="ourTeam" >
+    
         <div class="row">
           <div class="title">
             <h1>Our Team</h1>
@@ -70,7 +87,6 @@
             <div class="image-section">
               <img src="static/img/khadiza.png" alt="Khadiza Akther">
             </div>
-
             <div class="team-content">
               <h3>Khadiza Akther</h3>
               <h4>Web Developer</h4>
@@ -82,47 +98,38 @@
             <div class="image-section">
               <img src="static/img/bushra.png" alt="Bushra Siddika Priya">
             </div>
-
             <div class="team-content">
               <h3>Bushra Siddika Priya</h3>
               <h4>Web Developer</h4>
               <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique, saepe! Obcaecati voluptatem perspiciatis deleniti non repellat ex, necessitatibus quis sint?</p>
             </div>
-
           </div>
+
           <div class="card">
             <div class="image-section">
               <img src="static/img/srksir.png" alt="Saidur Rahman Kohinoor">
             </div>
-
             <div class="team-content">
               <h3>Saidur Rahman Kohinoor</h3>
               <h4>Supervisor</h4>
               <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique, saepe! Obcaecati voluptatem perspiciatis deleniti non repellat ex, necessitatibus quis sint?</p>
             </div>
-
           </div>
+
           <div class="card">
             <div class="image-section">
               <img src="static/img/mdJaman.png" alt="Jamaner Rahaman">
             </div>
-
             <div class="team-content">
               <h3>Md. Jamaner Rahaman</h3>
               <h4>Supervisor</h4>
               <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique, saepe! Obcaecati voluptatem perspiciatis deleniti non repellat ex, necessitatibus quis sint?</p>
             </div>
-
           </div>
+
         </div>
-
-      </div>
-    </div>
-
+  
   </section>
-
-
-
 
   <!-- ===== Footer ===== -->
   <footer>
@@ -155,7 +162,7 @@
 
 
   <!-- === Sticky Navbar === -->
-  <script type="text/javascript">
+  <script class="about">
     window.addEventListener('scroll', function () {
       var header = document.querySelector('.header')
       header.classList.toggle('sticky', window.scrollY > 0)
@@ -164,5 +171,4 @@
 
 
 </body>
-
 </html>
