@@ -7,6 +7,10 @@ def Welcome(request):
 def Dashboard(request):
     return render(request, 'homepage.html')
 
+# SignIn
+def SignIn(request):
+    return render(request, 'signin.html')
+
 # symptoms.html
 def Symptoms(request):
     return render(request, 'symptoms.html')

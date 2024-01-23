@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+* {
+    margin: 0;
+    font-family: 'Nunito', sans-serif;
+}
+
+:root {
+
+    --text-color: #6C87AE;
+    --gradient-1: #1678F2;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 32px;
+}
+
+.heading-purple {
+    color: #F2F7FF;
+}
+
+.signin-section {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* width: 100%; */
+    height: 100vh;
+    background: #F2F7FF;
+}
+
+
+.form-section {
+    position: absolute;
+    background: linear-gradient(141deg, #3A8EF6 0%, #6F3AFA 100%);
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px 4px #feca0c0b;
+    padding: 72px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.input-elements {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 300px;
+}
+
+.input-elements label {
+    font-weight: 600;
+    font-size: 16px;
+    color: white;
+}
+
+.input-elements input {
+    padding: 14px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #292930;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+}
+
+.input-elements input:focus {
+    outline: 2px solid #FEC90C;
+}
+
+.form>small {
+    font-weight: 500;
+    font-size: 14px;
+    color: white;
+}
+
+.form>small a {
+    color: #F2F7FF;
+    font-weight: 600;
+}
+
+#forgot-pass{
+    text-align: right;
+}
+
+.btn-primary {
+    background-color: #F2F7FF;
+    padding: 14px 0;
+    color: var(--gradient-1, linear-gradient(141deg, #3A8EF6 0%, #6F3AFA 100%));
+    font-weight: 600;
+    font-size: 16px;
+    border-radius: 50px;
+    text-align: center;
+    border: none;
+    width: 100%;
+}
+.btn-primary:hover {
+    background-color: #FFDC60;
+    color: var(--gradient-1, linear-gradient(141deg, #3A8EF6 0%, #6F3AFA 100%));
+}
