@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- css-link -->
+    <!-- <link rel="stylesheet" href="static\css\signup.css"> -->
+
+    <link rel="stylesheet" href="static\css\register.css">
+
+</head>
+
+<body>
+    <header>
+        <section class="page-title">
+            <!-- <img src="images/signup-signin-bg.png" alt=""> -->
+            <div class="form-section">
+                <form class="form">
+                    <h1>Join <span class="heading-purple">Us</span></h1>
+
+                    <div class="name-email">
+                        <div class="input-elements">
+                            <label for="username">User Name <span class="required-mark">*</span></label>
+                            <input type="text" id="username" placeholder="Your Name" required>
+                            <!-- <small>Error message</small> -->
+                        </div>
+                        <div class="input-elements">
+                            <label for="email">E-mail <span class="required-mark">*</span></label>
+                            <input type="text" id="email" placeholder="E-mail" required>
+                            <!-- <small>Error message</small> -->
+                        </div>
+                    </div>
+
+                    <div class="security">
+                        <div class="input-elements">
+                            <label for="password">Password <span class="required-mark">*</span></label>
+                            <input type="password" id="password" placeholder="Password" required>
+                            <!-- <small>Error message</small> -->
+                        </div>
+                        <div class="input-elements">
+                            <label for="cpassword">Confirm Password <span class="required-mark">*</span></label>
+                            <input type="password" id="cpassword" placeholder="Password Again" required>
+                            <!-- <small>Error message</small> -->
+                        </div>
+                    </div>
+
+                    <small style="color: white;">Have An Account? <span id="purple-signin"><a href="{% url 'signin' %}" style="color: white; text-decoration: none;">Sign In</a></span></small>
+
+                    <button type="submit" class="btn-primary" id="submit">Submit</button>
+                </form>
+            </div>
+        </section>
+    </header>
+
+</body>
+
+</html>

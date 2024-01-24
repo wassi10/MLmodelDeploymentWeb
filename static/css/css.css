@@ -82,7 +82,7 @@ html {
     color: var(--text-color);
 }
 
-.signup-btn {
+/* .signup-btn {
     margin-left: 1rem;   
     font-size: 1.5rem;
     font-weight: 500; 
@@ -91,7 +91,7 @@ html {
     border: 1px solid #6C87AE;    
     background: transparent;
     color: var(--text-color);
-}
+} */
 
 
 section{

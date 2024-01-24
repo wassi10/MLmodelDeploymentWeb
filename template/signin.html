@@ -21,6 +21,7 @@
     <section class="signin-section">
         <!-- <img src="\static\img\signup-signin-bg.png" alt=""> -->
         <div class="form-section">
+
             <form action="" class="form">
                 <h1>Welcome <span class="heading-purple">Back</span></h1>
                 <div class="name-email">
@@ -29,16 +30,21 @@
                         <input type="text" id="email" placeholder="E-mail" required>
                     </div>
                 </div>
+
                 <div class="security">
                     <div class="input-elements">
                         <label for="password">Password</label>
                         <input type="password" id="password" placeholder="Password" required>
                     </div>
                 </div>
-                <small id="forgot-pass" style="color: #f9f9f9;">Forgot Password?</small>
-                <small>Don't Have An Account? <span id="purple-signin"><a href="signup.html">Sign Up</a></span></small>
+
+                <small id="forgot-pass" style="color: #f9f9f9;"><a href="" style="text-decoration: none;">Forgot Password?</a></small>
+
+                <small>Don't Have An Account? <span id="purple-signin"><a href="{% url 'signup' %}" style="text-decoration: none;">Sign Up</a></span></small>
+
                 <button type="submit" class="btn-primary" id="login">Sign In</button>
             </form>
+
         </div>
     </section>
 

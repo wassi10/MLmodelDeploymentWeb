@@ -11,6 +11,10 @@ def Dashboard(request):
 def SignIn(request):
     return render(request, 'signin.html')
 
+# SignUp
+def SignUp(request):
+    return render(request, 'signup.html')
+
 # symptoms.html
 def Symptoms(request):
     return render(request, 'symptoms.html')
