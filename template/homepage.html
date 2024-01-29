@@ -2,73 +2,162 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HDPS</title>
-    <link rel="stylesheet" href="static/css/sidebar.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HDPS</title>
+  <link rel="stylesheet" href="static/css/sidebar.css">
+  <link rel="stylesheet" href="static/css/rowcode.css">
 
-    <!-- ============ Font Awesome ============ -->
-    <script src="https://kit.fontawesome.com/3f65800a99.js" crossorigin="anonymous"></script>
+  <!-- ============ Font Awesome ============ -->
+  <script src="https://kit.fontawesome.com/3f65800a99.js" crossorigin="anonymous"></script>
 
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"> -->
 
 </head>
 
 <body>
-    <!-- ==========Header design=========== -->
-    <header class="header">
-        <a href="#" class="logo text-decoration-none">Heart DP. <img src="static/img/logo.png" alt="" /></a>
 
-        <!-- <nav class="navbar">
+  <!-- ==========Header design=========== -->
+  <header class="header">
+    <a href="#" class="logo text-decoration-none">Heart DP. <img src="static/img/logo.png" alt="" /></a>
+
+    <!-- <nav class="navbar">
             <a href="{% url 'homepage'%}" class="active text-decoration-none">Home</a>
             <a href="#" class="text-decoration-none">Analysis</a>
             <a href="#" class="text-decoration-none">About</a>
             <a href="#" class="text-decoration-none">Our Team</a>
         </nav> -->
 
-    </header>
+  </header>
 
-    <section>
-        <div class="side-menu">
-            <center>
-                <h2>Khadiza Wassi</h2>
-            </center> <br>
+  <section>
+    <div class="side-menu">
+      <center>
+        <h2>Khadiza Wassi</h2>
+      </center> <br>
 
-            <hr>
-            <a href="{% url 'dashboard'%}"><i class="fa-solid fa-disease"></i><span>Disease Prediction</span></a>
+      <hr>
+      <a href="{% url 'dashboard'%}"><i class="fa-solid fa-disease"></i><span>Disease Prediction</span></a>
 
-            <a href="#"><i class="fa-solid fa-notes-medical"></i><span>Prediction Report</span></a>
-            <a href="{% url 'symptoms'%}"><i class="fa-solid fa-triangle-exclamation"></i><span>Symptoms</span></a>
+      <a href="#"><i class="fa-solid fa-notes-medical"></i><span>Prediction Report</span></a>
+      <a href="{% url 'symptoms'%}"><i class="fa-solid fa-triangle-exclamation"></i><span>Symptoms</span></a>
 
-            <a href="{% url 'prevention'%}"><i class="fa-solid fa-prescription-bottle-medical"></i><span>Prevention</span></a>
+      <a href="{% url 'prevention'%}"><i class="fa-solid fa-prescription-bottle-medical"></i><span>Prevention</span></a>
 
-            <a href="{% url 'DoctorAndHospital'%}"><i class="fa-solid fa-hospital-user"></i><span>Doctor's & Hospitals</span></a>
+      <a href="{% url 'DoctorAndHospital'%}"><i class="fa-solid fa-hospital-user"></i><span>Doctor's &
+          Hospitals</span></a>
 
-            <a href="#"><i class="fa-solid fa-right-from-bracket"></i><span>Logout</span></a>
+      <a href="#"><i class="fa-solid fa-right-from-bracket"></i><span>Logout</span></a>
 
+    </div>
+
+    <!-- === Main Div === -->
+    <div class="data">
+
+      <h1>Please fill up the following data correctly :-</h1>
+      <br>
+
+      <!-- ====== Input form of Heart Disease:- ==== -->
+
+      <form class="prediction-form">
+
+        <div class="age-sex-cp">
+          <div class="input-elements">
+            <label for="age">Age <span class="required-mark">*</span></label>
+            <input type="text" id="a1" name="age" placeholder="Your Age" required>
+            <!-- <small>Error message</small> -->
+          </div>
+
+          <div class="input-elements">
+            <label for="sex">Sex <span class="required-mark">*</span></label>
+            <input type="text" id="a2" name="sex" placeholder="Sex" required>
+            <!-- <small>Error message</small> -->
+          </div>
+
+          <div class="input-elements">
+            <label for="cp">cp <span class="required-mark">*</span></label>
+            <input type="text" id="a3" name="cp" placeholder="Chest Pain Type" required>
+            <!-- <small>Error message</small> -->
+          </div>
         </div>
 
-        <!-- === Main Div === -->
-        <div class="data">
-            <!-- ====== Input form of Heart Disease:- ==== -->
-            <h1>Please fill up the following data correctly :-</h1>
+        <div class="trestbps-chol-fbs">
+          <div class="input-elements">
+            <label for="trestbps">trestbps <span class="required-mark">*</span></label>
+            <input type="text" id="a4" name="trestbps" placeholder="Resting Blood Pressure (mm Hg)" required>
+            <!-- <small>Error message</small> -->
+          </div>
 
+          <div class="input-elements">
+            <label for="chol">chol <span class="required-mark">*</span></label>
+            <input type="text" id="a5" name="chol" placeholder="Cholesterol (mg/dl)" required>
+            <!-- <small>Error message</small> -->
+          </div>
 
-            <!-- == Input Form == -->
-
-            <form class="col s12">
-
-                
-
-
-            </form>
-
-        
-
-
+          <div class="input-elements">
+            <label for="fbs">fbs <span class="required-mark">*</span></label>
+            <input type="text" id="a6" name="fbs" placeholder="Fasting Blood Sugar" required>
+            <!-- <small>Error message</small> -->
+          </div>
         </div>
 
+        <div class="restecg-thalach-exang">
+          <div class="input-elements">
+            <label for="restecg">restecg <span class="required-mark">*</span></label>
+            <input type="text" id="a7" name="restecg" placeholder="Resting ECG Results" required>
+            <!-- <small>Error message</small> -->
+          </div>
 
-    </section>
+          <div class="input-elements">
+            <label for="thalach">thalach <span class="required-mark">*</span></label>
+            <input type="password" id="a8" name="thalach" placeholder="Maximum Heart Rate" required>
+            <!-- <small>Error message</small> -->
+          </div>
+
+          <div class="input-elements">
+            <label for="exang">exang <span class="required-mark">*</span></label>
+            <input type="text" id="a9" name="exang" placeholder="Exercise-Induced Angina" required>
+            <!-- <small>Error message</small> -->
+          </div>
+        </div>
+
+        <div class="oldpeak-slope-ca">
+          <div class="input-elements">
+            <label for="oldpeak">oldpeak <span class="required-mark">*</span></label>
+            <input type="text" id="a10" name="oldpeak" placeholder="Exercise-induced ST Depression"
+              required>
+            <!-- <small>Error message</small> -->
+          </div>
+
+          <div class="input-elements">
+            <label for="slope">slope <span class="required-mark">*</span></label>
+            <input type="text" id="a11" name="slope" placeholder="ST Peak Slope" required>
+            <!-- <small>Error message</small> -->
+          </div>
+
+          <div class="input-elements">
+            <label for="ca">ca <span class="required-mark">*</span></label>
+            <input type="text" id="a12" name="ca" placeholder="Number of Major Vessels" required>
+            <!-- <small>Error message</small> -->
+          </div>
+        </div>
+
+        <div class="thal">
+          <div class="input-elements">
+            <label for="thal">thal <span class="required-mark">*</span></label>
+            <input type="text" id="a13" name="thal" placeholder="Thalassemia Type" required>
+            <!-- <small>Error message</small> -->
+          </div>
+        </div>
+
+        <button type="submit" class="btn-primary" id="submit">Predict</button>
+      </form>
+
+
+    </div>
+
+
+  </section>
 </body>
 
 </html>

@@ -350,3 +350,24 @@ footer hr {
     color: var(--text-color);
     line-height: 1.5;
 }
+
+/* Responsive */
+@media screen and (max-width: 1200px ){
+    html{
+        font-size: 55%;
+     }
+    .team-card{
+        margin-bottom: 8rem;
+    }
+}
+@media screen and (max-width: 1000px ){
+    .team-card{
+        grid-template-columns: repeat(3, 1fr);
+        margin-bottom: 8rem;
+    }
+}
+@media screen and (max-width: 768px ){
+    .team-card{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
