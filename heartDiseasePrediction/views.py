@@ -10,19 +10,22 @@ def Welcome(request):
     return render(request, 'index.html')
 
 
-# @login_required(login_url='signin')
-
+@login_required(login_url='signin')
 def Dashboard(request):
     return render(request, 'homepage.html')
 
 
 # symptoms.html
 def Symptoms(request):
-    return render(request, 'symptoms.html')
+    if request.user.is_authenticated:
+        return render(request, 'symptoms.html')
+    return redirect('signin')
 
 # prevention.html
 def Prevention(request):
-    return render(request, 'prevention.html')
+    if request.user.is_authenticated:
+        return render(request, 'prevention.html')
+    return redirect('signin')
 
 # Doctor and hospital list Section
 def DoctorAndHospital(request):
