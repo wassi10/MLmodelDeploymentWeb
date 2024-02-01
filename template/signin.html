@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- css-link -->
-    
+
     <!-- <link rel="stylesheet" href="\static\css\signin.css"> -->
     <link rel="stylesheet" href="static/css/login.css">
 
@@ -22,26 +22,36 @@
         <!-- <img src="\static\img\signup-signin-bg.png" alt=""> -->
         <div class="form-section">
 
-            <form action="" class="form">
+            <form action="" class="form" method="POST">
                 {% csrf_token %}
+
                 <h1>Welcome <span class="heading-purple">Back</span></h1>
+
+                {% if messages %}
+                {% for message in messages %}
+                <span style="color: white;">{{ message }}</span>
+                {% endfor %}
+                {% endif %}
+
                 <div class="name-email">
                     <div class="input-elements">
-                        <label for="email">E-mail</label>
-                        <input type="text" id="email" placeholder="E-mail" required>
+                        <label for="username">Username</label>
+                        <input type="text" name="username" id="username" placeholder="Username" required>
                     </div>
                 </div>
 
                 <div class="security">
                     <div class="input-elements">
                         <label for="password">Password</label>
-                        <input type="password" id="password" placeholder="Password" required>
+                        <input type="password" name="password" id="password" placeholder="Password" required>
                     </div>
                 </div>
 
-                <small id="forgot-pass" style="color: #f9f9f9;"><a href="" style="text-decoration: none;">Forgot Password?</a></small>
+                <small id="forgot-pass" style="color: #f9f9f9;"><a href="" style="text-decoration: none;">Forgot
+                        Password?</a></small>
 
-                <small>Don't Have An Account? <span id="purple-signin"><a href="{% url 'signup' %}" style="text-decoration: none;">Sign Up</a></span></small>
+                <small>Don't Have An Account? <span id="purple-signin"><a href="{% url 'signup' %}"
+                            style="text-decoration: none;">Sign Up</a></span></small>
 
                 <button type="submit" class="btn-primary" id="login">Sign In</button>
             </form>

@@ -2,21 +2,19 @@
 from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User, auth
+from django.contrib.auth import authenticate,login, logout # if we use auth, we don't require this library
+from django.contrib.auth.decorators import login_required
 
 
 def Welcome(request):
     return render(request, 'index.html')
 
+
+# @login_required(login_url='signin')
+
 def Dashboard(request):
     return render(request, 'homepage.html')
 
-# SignIn
-def SignIn(request):
-    return render(request, 'signin.html')
-
-# SignUp
-def SignUp(request):
-    return render(request, 'signup.html')
 
 # symptoms.html
 def Symptoms(request):
@@ -28,7 +26,28 @@ def Prevention(request):
 
 # Doctor and hospital list Section
 def DoctorAndHospital(request):
-    return render(request, 'doctorHospitalList.html')
+    if request.user.is_authenticated:
+        return render(request, 'doctorHospitalList.html')
+    return redirect('signin')
+    # return render(request, 'signin.html')
+
+
+
+# For the user to SignIn
+def SignIn(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password') 
+
+        user = auth.authenticate(username=username, password=password)
+        if user is not None:
+            auth.login(request,user)
+            return redirect('dashboard')
+        else:
+            messages.warning(request,'Invalid Credentials')
+            return redirect('signin')   
+        
+    return render(request, 'signin.html')
 
 
 #For the user to resister or sign up.
@@ -64,7 +83,9 @@ def SignUp(request):
     return render(request, 'signup.html')
 
 
-
+def signout(request): # In order to logout from the website
+    logout(request)
+    return redirect('homepage')
 
 
 
@@ -83,17 +104,22 @@ def SignUp(request):
 
 
 
+# def signin(request): # For the user to sign in.
+#     if request.method == 'POST':
+#         username = request.POST['username']
+#         password = request.POST['password']
 
+#         user = auth.authenticate(username=username,password=password)
+#         if user is not None:
+#             auth.login(request,user)
+#             return redirect('/')
+#         else:
+#             messages.warning(request,'Invalid Credentials')
+#             return redirect('signin')
 
-
-
-
-
-
-
-
-
-
+        
+#     else:
+#         return render(request,'signin.html')
 
 
 # def signup(request): #For the user to resister or sign up.
