@@ -12,8 +12,14 @@ def Welcome(request):
 
 @login_required(login_url='signin')
 def Dashboard(request):
+    # if request.user.is_authenticated:
+    #     username = request.user.username
+    #     email = request.user.email
+    #     context = {'username': username, 'email': email}
     return render(request, 'homepage.html')
-
+    # else:
+    # #     # If the user is not authenticated, you might want to redirect them to the login page
+    #     return redirect('login')
 
 # symptoms.html
 def Symptoms(request):

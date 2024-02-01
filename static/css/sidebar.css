@@ -101,10 +101,16 @@ html {
 } */
 
 .side-menu center h2 {
-    margin-top: 50px;
+    margin-top: 70px;
     color: white;
     font-size: 2rem;
-    padding-bottom: 7rem;
+    /* padding-bottom: 5.5rem; */
+}
+
+.side-menu center h3 {
+    color: white;
+    font-size: 1.5rem;
+    padding-bottom: 5.5rem;
 }
 
 .side-menu a {
