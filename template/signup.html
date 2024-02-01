@@ -18,19 +18,36 @@
         <section class="page-title">
             <!-- <img src="images/signup-signin-bg.png" alt=""> -->
             <div class="form-section">
-                <form class="form">
+                <form class="form" method="POST">
+                    {% csrf_token %}
                     <h1>Join <span class="heading-purple">Us</span></h1>
+
+                    {% if messages %}
+                    {% for message in messages %}
+                    <span style="color: white;">{{ message }}</span>
+                    {% endfor %}
+                    {% endif %}
 
                     <div class="name-email">
                         <div class="input-elements">
                             <label for="username">User Name <span class="required-mark">*</span></label>
                             <input type="text" name="username" id="username" placeholder="Your Name" required>
-                            <!-- <small>Error message</small> -->
+
+
+
+                            <!-- {% if messages %}
+                            <ul class="messages">
+                                {% for message in messages %}
+                                <li>{{ message }}</li>
+                                {% endfor %}
+                            </ul>
+                            {% endif %} -->
+                            <!-- <span>{{ messages }}</span> -->
+
                         </div>
                         <div class="input-elements">
                             <label for="email">E-mail <span class="required-mark">*</span></label>
                             <input type="text" name="email" id="email" placeholder="E-mail" required>
-                            <!-- <small>Error message</small> -->
                         </div>
                     </div>
 
@@ -38,22 +55,52 @@
                         <div class="input-elements">
                             <label for="password1">Password <span class="required-mark">*</span></label>
                             <input type="password" name="password1" id="password1" placeholder="Password" required>
-                            <!-- <small>Error message</small> -->
+
+                            <!-- <img src="static\img\pass-hide.png" onclick="pass()" class="pass-icon" id="pass-icon"> -->
+
+                            <!-- {% if messages %}
+                            {% for message2 in messages %}
+                            <span>{{ message2 }}</span>
+                            {% endfor %}
+                            {% endif %} -->
                         </div>
                         <div class="input-elements">
                             <label for="password2">Confirm Password <span class="required-mark">*</span></label>
-                            <input type="password" name="password2" id="password2" placeholder="Password Again" required>
-                            <!-- <small>Error message</small> -->
+                            <input type="password" name="password2" id="password2" placeholder="Password Again"
+                                required>
+                            <!-- {% if messages %}
+                            {% for message3 in messages %}
+                            <span>{{ message3 }}</span>
+                            {% endfor %}
+                            {% endif %} -->
                         </div>
                     </div>
 
-                    <small style="color: white;">Have An Account? <span id="purple-signin"><a href="{% url 'signin' %}" style="color: white; text-decoration: none;">Sign In</a></span></small>
+                    <small style="color: white;">Have An Account? <span id="purple-signin"><a href="{% url 'signin' %}"
+                                style="color: white; text-decoration: none;">Sign In</a></span></small>
 
                     <button type="submit" class="btn-primary" id="submit">Submit</button>
                 </form>
             </div>
         </section>
     </header>
+
+    <!-- <script>
+        var a
+        function pass(){
+            if(a==1){
+                document.getElementById('password1').type='password1';
+                document.getElementById('pass-icon').src ='pass-hide.png';
+                a=0;
+            }
+            else
+            {
+                document.getElementById('password1').type='text';
+                document.getElementById('pass-icon').src ='pass-hide.png';
+                a=1; 
+            }
+        }
+    </script> -->
 
 </body>
 
