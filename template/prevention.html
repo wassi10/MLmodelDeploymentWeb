@@ -9,7 +9,7 @@
 
     <!-- ============ Font Awesome ============ -->
     <script src="https://kit.fontawesome.com/3f65800a99.js" crossorigin="anonymous"></script>
-    
+
 
 </head>
 
@@ -30,22 +30,40 @@
     <section>
         <div class="side-menu">
             <center>
-                <h2>Khadiza Wassi</h2>
+                <h2>Hello, {{ user.username }}!</h2>
+                <h3> {{ user.email }}</h3>
             </center> <br>
 
             <hr>
             <a href="{% url 'dashboard'%}"><i class="fa-solid fa-disease"></i><span>Disease Prediction</span></a>
-            <a href="#"><i class="fa-solid fa-notes-medical"></i><span>Prediction Report</span></a>
+            <a href="{% url 'report'%}"><i class="fa-solid fa-notes-medical"></i><span>Prediction Report</span></a>
             <a href="{% url 'symptoms'%}"><i class="fa-solid fa-triangle-exclamation"></i><span>Symptoms</span></a>
-            <a href="{% url 'prevention'%}"><i class="fa-solid fa-prescription-bottle-medical"></i><span>Prevention</span></a>
-            <a href="{% url 'DoctorAndHospital'%}"><i class="fa-solid fa-hospital-user"></i><span>Doctor's & Hospitals</span></a>
+            <a href="{% url 'prevention'%}"><i
+                    class="fa-solid fa-prescription-bottle-medical"></i><span>Prevention</span></a>
+            <a href="{% url 'DoctorAndHospital'%}"><i class="fa-solid fa-hospital-user"></i><span>Doctor's &
+                    Hospitals</span></a>
             <a href="{% url 'signout'%}"><i class="fa-solid fa-right-from-bracket"></i><span>Logout</span></a>
 
         </div>
 
         <div class="data">
             <p>prevention</p>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci, error corporis maxime aperiam vero consectetur aut magnam consequatur ratione soluta fuga optio nostrum perferendis explicabo voluptatum aliquam. Consequuntur magnam recusandae omnis. Ex placeat itaque magni. Eum nihil sequi quisquam ea error porro voluptatem reprehenderit? Commodi, ipsum aliquam! Incidunt eligendi temporibus molestias, ullam iste tenetur similique sequi natus quam porro explicabo quisquam tempore necessitatibus aut, quos suscipit debitis nemo. Tempore corrupti, a, culpa id eligendi laborum quis ab, harum perferendis aliquid nam consectetur aperiam quibusdam adipisci! Voluptas fuga et error cum eaque totam ut in. Suscipit fugiat, asperiores facere ipsam similique quisquam et laborum, doloribus temporibus necessitatibus sequi repellendus, quo repellat enim labore! Provident, optio sapiente. Facilis, at. Quae rerum, ratione similique debitis autem dolor temporibus ipsum molestias officia soluta aliquid odio culpa, placeat impedit cupiditate deleniti voluptas libero ut nesciunt aliquam alias sed. Ab id, a doloribus voluptatum officiis maxime doloremque consectetur unde nisi aliquid harum impedit ratione repellendus aspernatur fugit eveniet omnis architecto minus similique porro cumque eligendi? Ipsam amet aliquam quidem aperiam consectetur dolore sunt voluptas, sapiente animi, beatae eos, nulla deleniti hic. Quis repellat aperiam voluptatem totam impedit earum corporis. Iste molestias consequatur voluptates? Obcaecati, ea voluptatum.</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci, error corporis maxime aperiam vero
+                consectetur aut magnam consequatur ratione soluta fuga optio nostrum perferendis explicabo voluptatum
+                aliquam. Consequuntur magnam recusandae omnis. Ex placeat itaque magni. Eum nihil sequi quisquam ea
+                error porro voluptatem reprehenderit? Commodi, ipsum aliquam! Incidunt eligendi temporibus molestias,
+                ullam iste tenetur similique sequi natus quam porro explicabo quisquam tempore necessitatibus aut, quos
+                suscipit debitis nemo. Tempore corrupti, a, culpa id eligendi laborum quis ab, harum perferendis aliquid
+                nam consectetur aperiam quibusdam adipisci! Voluptas fuga et error cum eaque totam ut in. Suscipit
+                fugiat, asperiores facere ipsam similique quisquam et laborum, doloribus temporibus necessitatibus sequi
+                repellendus, quo repellat enim labore! Provident, optio sapiente. Facilis, at. Quae rerum, ratione
+                similique debitis autem dolor temporibus ipsum molestias officia soluta aliquid odio culpa, placeat
+                impedit cupiditate deleniti voluptas libero ut nesciunt aliquam alias sed. Ab id, a doloribus voluptatum
+                officiis maxime doloremque consectetur unde nisi aliquid harum impedit ratione repellendus aspernatur
+                fugit eveniet omnis architecto minus similique porro cumque eligendi? Ipsam amet aliquam quidem aperiam
+                consectetur dolore sunt voluptas, sapiente animi, beatae eos, nulla deleniti hic. Quis repellat aperiam
+                voluptatem totam impedit earum corporis. Iste molestias consequatur voluptates? Obcaecati, ea
+                voluptatum.</p>
         </div>
     </section>
 </body>

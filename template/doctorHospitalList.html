@@ -29,13 +29,15 @@
 
     <section>
         <div class="side-menu">
+
             <center>
-                <h2>Khadiza Wassi</h2>
+                <h2>Hello, {{ user.username }}!</h2>
+                <h3> {{ user.email }}</h3>
             </center> <br>
 
             <hr>
             <a href="{% url 'dashboard'%}"><i class="fa-solid fa-disease"></i><span>Disease Prediction</span></a>
-            <a href="#"><i class="fa-solid fa-notes-medical"></i><span>Prediction Report</span></a>
+            <a href="{% url 'report'%}"><i class="fa-solid fa-notes-medical"></i><span>Prediction Report</span></a>
             <a href="{% url 'symptoms'%}"><i class="fa-solid fa-triangle-exclamation"></i><span>Symptoms</span></a>
             <a href="{% url 'prevention'%}"><i
                     class="fa-solid fa-prescription-bottle-medical"></i><span>Prevention</span></a>

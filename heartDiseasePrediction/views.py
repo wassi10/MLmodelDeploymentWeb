@@ -21,6 +21,13 @@ def Dashboard(request):
     # #     # If the user is not authenticated, you might want to redirect them to the login page
     #     return redirect('login')
 
+
+# report.html
+def Report(request):
+    if request.user.is_authenticated:
+        return render(request, 'report.html')
+    return redirect('signin')
+
 # symptoms.html
 def Symptoms(request):
     if request.user.is_authenticated:
