@@ -126,8 +126,10 @@ def Result(request):
 # report.html
 def Report(request):
     if request.user.is_authenticated:
-        return render(request, 'report.html')
+        record_data = HeartData.objects.filter(owner = request.user) #Filter only those data 
+        return render(request, 'report.html', {'record_data':record_data})
     return redirect('signin')
+
 
 # symptoms.html
 def Symptoms(request):
