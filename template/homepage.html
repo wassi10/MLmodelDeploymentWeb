@@ -60,24 +60,24 @@
 
       <!-- ====== Input form of Heart Disease:- ==== -->
 
-      <form class="prediction-form">
+      <form class="prediction-form" method="POST">
 
         <div class="age-sex-cp">
           <div class="input-elements">
             <label for="age">Age <span class="required-mark">*</span></label>
-            <input type="text" id="a1" name="age" placeholder="Your Age" required>
+            <input type="text" id="a1" name="age" placeholder="Your Age" required class="validate">
             <!-- <small>Error message</small> -->
           </div>
 
           <div class="input-elements">
             <label for="sex">Sex <span class="required-mark">*</span></label>
-            <input type="text" id="a2" name="sex" placeholder="Sex" required>
+            <input type="text" id="a2" name="sex" placeholder="Sex" required class="validate">
             <!-- <small>Error message</small> -->
           </div>
 
           <div class="input-elements">
             <label for="cp">cp <span class="required-mark">*</span></label>
-            <input type="text" id="a3" name="cp" placeholder="Chest Pain Type" required>
+            <input type="text" id="a3" name="cp" placeholder="Chest Pain Type" required class="validate">
             <!-- <small>Error message</small> -->
           </div>
         </div>
@@ -85,19 +85,19 @@
         <div class="trestbps-chol-fbs">
           <div class="input-elements">
             <label for="trestbps">trestbps <span class="required-mark">*</span></label>
-            <input type="text" id="a4" name="trestbps" placeholder="Resting Blood Pressure (mm Hg)" required>
+            <input type="text" id="a4" name="trestbps" placeholder="Resting Blood Pressure (mm Hg)" required class="validate">
             <!-- <small>Error message</small> -->
           </div>
 
           <div class="input-elements">
             <label for="chol">chol <span class="required-mark">*</span></label>
-            <input type="text" id="a5" name="chol" placeholder="Cholesterol (mg/dl)" required>
+            <input type="text" id="a5" name="chol" placeholder="Cholesterol (mg/dl)" required class="validate">
             <!-- <small>Error message</small> -->
           </div>
 
           <div class="input-elements">
             <label for="fbs">fbs <span class="required-mark">*</span></label>
-            <input type="text" id="a6" name="fbs" placeholder="Fasting Blood Sugar" required>
+            <input type="text" id="a6" name="fbs" placeholder="Fasting Blood Sugar" required class="validate">
             <!-- <small>Error message</small> -->
           </div>
         </div>
@@ -105,19 +105,19 @@
         <div class="restecg-thalach-exang">
           <div class="input-elements">
             <label for="restecg">restecg <span class="required-mark">*</span></label>
-            <input type="text" id="a7" name="restecg" placeholder="Resting ECG Results" required>
+            <input type="text" id="a7" name="restecg" placeholder="Resting ECG Results" required class="validate">
             <!-- <small>Error message</small> -->
           </div>
 
           <div class="input-elements">
             <label for="thalach">thalach <span class="required-mark">*</span></label>
-            <input type="password" id="a8" name="thalach" placeholder="Maximum Heart Rate" required>
+            <input type="text" id="a8" name="thalach" placeholder="Maximum Heart Rate" required class="validate">
             <!-- <small>Error message</small> -->
           </div>
 
           <div class="input-elements">
             <label for="exang">exang <span class="required-mark">*</span></label>
-            <input type="text" id="a9" name="exang" placeholder="Exercise-Induced Angina" required>
+            <input type="text" id="a9" name="exang" placeholder="Exercise-Induced Angina" required class="validate">
             <!-- <small>Error message</small> -->
           </div>
         </div>
@@ -125,19 +125,19 @@
         <div class="oldpeak-slope-ca">
           <div class="input-elements">
             <label for="oldpeak">oldpeak <span class="required-mark">*</span></label>
-            <input type="text" id="a10" name="oldpeak" placeholder="Exercise-induced ST Depression" required>
+            <input type="text" id="a10" name="oldpeak" placeholder="Exercise-induced ST Depression" required class="validate">
             <!-- <small>Error message</small> -->
           </div>
 
           <div class="input-elements">
             <label for="slope">slope <span class="required-mark">*</span></label>
-            <input type="text" id="a11" name="slope" placeholder="ST Peak Slope" required>
+            <input type="text" id="a11" name="slope" placeholder="ST Peak Slope" required class="validate">
             <!-- <small>Error message</small> -->
           </div>
 
           <div class="input-elements">
             <label for="ca">ca <span class="required-mark">*</span></label>
-            <input type="text" id="a12" name="ca" placeholder="Number of Major Vessels" required>
+            <input type="text" id="a12" name="ca" placeholder="Number of Major Vessels" required class="validate">
             <!-- <small>Error message</small> -->
           </div>
         </div>
@@ -145,11 +145,11 @@
         <div class="thal">
           <div class="input-elements">
             <label for="thal">thal <span class="required-mark">*</span></label>
-            <input type="text" id="a13" name="thal" placeholder="Thalassemia Type" required>
+            <input type="text" id="a13" name="thal" placeholder="Thalassemia Type" required class="validate">
             <!-- <small>Error message</small> -->
           </div>
         </div>
-
+        {% csrf_token %}
         <button type="submit" class="btn-primary" id="submit">Predict</button>
       </form>
 
