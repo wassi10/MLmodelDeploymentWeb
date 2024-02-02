@@ -12,15 +12,7 @@ def Welcome(request):
 
 @login_required(login_url='signin')
 def Dashboard(request):
-    # if request.user.is_authenticated:
-    #     username = request.user.username
-    #     email = request.user.email
-    #     context = {'username': username, 'email': email}
     return render(request, 'homepage.html')
-    # else:
-    # #     # If the user is not authenticated, you might want to redirect them to the login page
-    #     return redirect('login')
-
 
 # report.html
 def Report(request):
@@ -110,76 +102,6 @@ def signout(request): # In order to logout from the website
 
 
  
-
-
-
-
-
-
-
-
-
-
-# def signin(request): # For the user to sign in.
-#     if request.method == 'POST':
-#         username = request.POST['username']
-#         password = request.POST['password']
-
-#         user = auth.authenticate(username=username,password=password)
-#         if user is not None:
-#             auth.login(request,user)
-#             return redirect('/')
-#         else:
-#             messages.warning(request,'Invalid Credentials')
-#             return redirect('signin')
-
-        
-#     else:
-#         return render(request,'signin.html')
-
-
-# def signup(request): #For the user to resister or sign up.
-
-    # if request.method == 'POST':
-    #     first_name = request.POST['first_name']
-    #     last_name = request.POST['last_name']
-    #     username = request.POST['username']
-    #     password = request.POST['password']
-    #     email = request.POST['email']
-
-        
-    #     if User.objects.filter(username=username).exists():
-    #         messages.info(request,'Username taken')
-    #         return redirect('signup')
-    #     elif User.objects.filter(email=email).exists():
-    #         messages.info(request,'Email taken')
-    #         return redirect('signup')
-    #     else:
-    #         user = User.objects.create_user(username=username, password=password,email=email,first_name = first_name,last_name=last_name)
-            
-    #         user.save()
-            
-    #         messages.success(request,f"User {username} created!")
-    #         return redirect('signin')
-    #     #return redirect('/')
-    # else:   
-#         return render(request,'signup.html')
-
-
-# def signout(request): # In order to logout from the website
-#     auth.logout(request)
-#     return redirect('/')
-
-
-
-
-
-
-
-
-
-
-
 
 
 
