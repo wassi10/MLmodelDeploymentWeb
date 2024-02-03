@@ -19,100 +19,107 @@ def Welcome(request):
 #     return render(request, 'homepage.html')
 
 
-# def Dashboard(request):
-#     # Direct authenticated users to the home page
-#     if request.user.is_authenticated:
-#         if request.method == 'POST':
-#             form = Parameters(request.POST)
-#             if form.is_valid():
-#                 # Extract cleaned data from the form
-#                 age = form.cleaned_data['age']
-#                 sex = form.cleaned_data['sex']
-#                 cp = form.cleaned_data['cp']
-#                 trestbps = form.cleaned_data['trestbps']
-#                 chol = form.cleaned_data['chol']
-#                 fbs = form.cleaned_data['fbs']
-#                 restcg = form.cleaned_data['restecg']
-#                 thalach = form.cleaned_data['thalach']
-#                 exang = form.cleaned_data['exang']
-#                 oldpeak = form.cleaned_data['oldpeak']
-#                 slope = form.cleaned_data['slope']
-#                 ca = form.cleaned_data['ca']
-#                 thal = form.cleaned_data['thal']
-
-#                 # Load the model
-#                 try:
-#                     cls = joblib.load('XGBoost_model.sav')
-#                     # Make predictions
-#                     output, output1 = cls.predict(np.array([age, sex, cp, trestbps, chol, fbs, restcg, thalach, exang, oldpeak, slope, ca, thal]).reshape(1, -1))
-#                     danger = 'high' if output == 1 else 'low'
-#                     output1 = output1[0]
-#                     # Save data to database
-#                     saved_data = HeartData(age=age, sex=sex, cp=cp, trestbps=trestbps, chol=chol, fbs=fbs, restcg=restcg, thalach=thalach, exang=exang, oldpeak=oldpeak, slope=slope, ca=ca, thal=thal, owner=request.user, probability=output1)
-#                     saved_data.save()
-#                     return render(request, 'result.html', {'output1': output1, 'danger': danger})
-#                 except Exception as e:
-#                     # Handle model loading or prediction errors
-#                     return render(request, 'error.html', {'error': str(e)})
-
-#         # For GET requests or invalid form submissions
-#         form = Parameters()
-#         return render(request, 'homepage.html', {'form': form})
-#     else:
-#         # Redirect non-authenticated users to the signin page
-#         return redirect('signin')
-
-
-def Dashboard(request): #Directs the user to home page . Different for authenticated and non authenticated users.
+def Dashboard(request):
     if request.user.is_authenticated:
-        if request.method=='POST':
-    
-            form=Parameters(request.POST)
-            if form.is_valid():
-                age=form.cleaned_data['age']
-                sex=form.cleaned_data['sex']
-                cp=form.cleaned_data['cp']
-                trestbps=form.cleaned_data['trestbps']
-                chol=form.cleaned_data['chol']
-                fbs=form.cleaned_data['fbs']
-                restcg=form.cleaned_data['restecg']
-                thalach=form.cleaned_data['thalach']
-                exang=form.cleaned_data['exang']
-                oldpeak=form.cleaned_data['oldpeak']
-                slope=form.cleaned_data['slope']
-                ca=form.cleaned_data['ca']
-                thal=form.cleaned_data['thal']
+        if request.method == 'POST':
+            # Load the machine learning model
+            model = joblib.load('D:\\Web\\MLmodelDeploymentWeb\\heartDiseasePrediction\\MLP_model.sav')
 
+            # Extract data from POST request
+            age = float(request.POST.get('age'))
+            sex = float(request.POST.get('sex'))
+            cp = float(request.POST.get('cp'))
+            trestbps = float(request.POST.get('trestbps'))
+            chol = float(request.POST.get('chol'))
+            fbs = float(request.POST.get('fbs'))
+            restcg = float(request.POST.get('restecg'))
+            thalach = float(request.POST.get('thalach'))
+            exang = float(request.POST.get('exang'))
+            oldpeak = float(request.POST.get('oldpeak'))
+            slope = float(request.POST.get('slope'))
+            ca = float(request.POST.get('ca'))
+            thal = float(request.POST.get('thal'))
 
-                cls = joblib.load('XGBoost_model.sav')
-                
-                output , output1 = cls.predict(np.array([age,sex,cp,trestbps,chol,fbs,restcg,thalach,exang,oldpeak,slope,ca,thal]).reshape(1,-1))
+            # Convert data to numpy array for model prediction
+            input_data = np.array([
+                age, sex, cp, trestbps, chol, fbs, restcg, thalach, exang, oldpeak, slope, ca, thal
+            ]).reshape(1, -1)
 
-                danger = 'high' if output == 1 else 'low'
-                output1=output1[0]
-                saved_data = HeartData(age=age ,  # Saving to database
-                sex = sex,
-                cp = cp,
-                trestbps = trestbps,
-                chol = chol,
-                fbs = fbs,
-                restcg = restcg , 
-                thalach = thalach , 
-                exang = exang,
-                oldpeak = oldpeak,
-                slope = slope,
-                ca = ca,
-                thal = thal,
+            # Make prediction
+            output1 = model.predict(input_data)
+
+            danger = 'high' if output1 == 1 else 'low'
+            output1 = output1[0]
+
+            # Save data to the database
+            prediction_data = HeartData.objects.create(
+                age=age,
+                sex=sex,
+                cp=cp,
+                trestbps=trestbps,
+                chol=chol,
+                fbs=fbs,
+                restcg=restcg,
+                thalach=thalach,
+                exang=exang,
+                oldpeak=oldpeak,
+                slope=slope,
+                ca=ca,
+                thal=thal,
                 owner = request.user,
                 probability = output1
-                )  #Saved the authenticated users data in the database.
-                saved_data.save()
-                return render(request , 'result.html',{'output1':output1 , 'danger':danger})
+            )
+            prediction_data.save()
+            # Render result template with prediction output
+            return render(request, 'result.html', {'output1': output1, 'danger': danger})
 
+        # Render homepage if request method is not POST
+        return render(request, 'homepage.html')
 
-        form = Parameters()
-        return render(request , 'homepage.html', {'form':form})
+    # Redirect to sign-in page if user is not authenticated
     return redirect('signin')
+
+
+# def Dashboard(request):
+#     if request.user.is_authenticated:
+#         if request.method == 'POST':
+#             # Load the machine learning model
+#             model = joblib.load('D:\\Web\\MLmodelDeploymentWeb\\heartDiseasePrediction\\MLP_model.sav')
+
+#             # Extract data from POST request
+#             lis = [
+#                 float(request.POST.get('age')),
+#                 float(request.POST.get('sex')),
+#                 float(request.POST.get('cp')),
+#                 float(request.POST.get('trestbps')),
+#                 float(request.POST.get('chol')),
+#                 float(request.POST.get('fbs')),
+#                 float(request.POST.get('restecg')),
+#                 float(request.POST.get('thalach')),
+#                 float(request.POST.get('exang')),
+#                 float(request.POST.get('oldpeak')),
+#                 float(request.POST.get('slope')),
+#                 float(request.POST.get('ca')),
+#                 float(request.POST.get('thal'))
+#             ]
+
+#             # Convert list to numpy array for model prediction
+#             input_data = np.array(lis).reshape(1, -1)
+
+#             # Make prediction
+#             output1 = model.predict(input_data)
+
+#             danger = 'high' if output1 == 1 else 'low'
+#             output1=output1[0]
+#             # Render result template with prediction output
+#             return render(request, 'result.html', {'output1': output1, 'danger':danger})
+
+#         # Render homepage if request method is not POST
+#         return render(request, 'homepage.html')
+
+#     # Redirect to sign-in page if user is not authenticated
+#     return redirect('signin')
+
 
 
 
