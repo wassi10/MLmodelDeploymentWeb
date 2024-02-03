@@ -28,9 +28,19 @@
       font-size: 3rem;
     }
 
+    th {
+      color: #1678F2;
+    }
+
     th,
     td {
       padding: 0px 20px 10px 0px;
+    }
+
+    hr {
+      border: 0;
+      border-bottom: 2px solid #ccc;
+      font-weight: 600;
     }
   </style>
 </head>
@@ -66,7 +76,7 @@
 
     <!-- === Main Div === -->
     <div class="data">
-      <h1> Here is the record of your previous Prediction of Heart Disease. </h1>
+      <h1> Here is the record of your previous Prediction of Heart Disease: </h1>
 
       {% if record_data %}
 
