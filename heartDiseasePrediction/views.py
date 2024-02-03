@@ -48,7 +48,7 @@ def Dashboard(request):
             # Make prediction
             output1 = model.predict(input_data)
 
-            danger = 'high' if output1 == 1 else 'low'
+            danger = 'High' if output1 == 1 else 'Low'
             output1 = output1[0]
 
             # Save data to the database
