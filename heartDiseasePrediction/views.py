@@ -5,19 +5,17 @@ from django.contrib.auth.models import User, auth
 from django.contrib.auth import authenticate, login, logout # if we use auth, we don't require this library
 from django.contrib.auth.decorators import login_required
 import numpy as np
-from .forms import Parameters
 from .models import HeartData
 import joblib
 
 
 def Welcome(request):
+    if request.user.is_authenticated:
+        return render(request, 'homepage.html')
     return render(request, 'index.html')
 
 
 @login_required(login_url='signin')
-# def Dashboard(request):
-#     return render(request, 'homepage.html')
-
 
 def Dashboard(request):
     if request.user.is_authenticated:
@@ -41,18 +39,25 @@ def Dashboard(request):
             thal = float(request.POST.get('thal'))
 
             # Convert data to numpy array for model prediction
-            input_data = np.array([
-                age, sex, cp, trestbps, chol, fbs, restcg, thalach, exang, oldpeak, slope, ca, thal
-            ]).reshape(1, -1)
+            # input_data = np.array([
+            #     age, sex, cp, trestbps, chol, fbs, restcg, thalach, exang, oldpeak, slope, ca, thal
+            # ]).reshape(1, -1)
+
+            # # Make prediction
+            # output1 = model.predict(input_data)
 
             # Make prediction
-            output1 = model.predict(input_data)
+            probabilities = model.predict_proba(np.array([age,sex,cp,trestbps,chol,fbs,restcg,thalach,exang,oldpeak,slope,ca,thal]).reshape(1,-1))
 
-            danger = 'High' if output1 == 1 else 'Low'
-            output1 = output1[0]
+            probability_of_heart_disease = probabilities[0][1] * 100
+            probability_formatted = "{:.4f}".format(probability_of_heart_disease)
+            
+            
+            danger = 'High' if probability_of_heart_disease >= 50 else 'Low'
+            
 
             # Save data to the database
-            prediction_data = HeartData.objects.create(
+            prediction_data = HeartData(
                 age=age,
                 sex=sex,
                 cp=cp,
@@ -67,11 +72,11 @@ def Dashboard(request):
                 ca=ca,
                 thal=thal,
                 owner = request.user,
-                probability = output1
+                probability = probability_formatted
             )
             prediction_data.save()
             # Render result template with prediction output
-            return render(request, 'result.html', {'output1': output1, 'danger': danger})
+            return render(request, 'result.html', {'output1': probability_formatted, 'danger': danger})
 
         # Render homepage if request method is not POST
         return render(request, 'homepage.html')
@@ -87,40 +92,60 @@ def Dashboard(request):
 #             model = joblib.load('D:\\Web\\MLmodelDeploymentWeb\\heartDiseasePrediction\\MLP_model.sav')
 
 #             # Extract data from POST request
-#             lis = [
-#                 float(request.POST.get('age')),
-#                 float(request.POST.get('sex')),
-#                 float(request.POST.get('cp')),
-#                 float(request.POST.get('trestbps')),
-#                 float(request.POST.get('chol')),
-#                 float(request.POST.get('fbs')),
-#                 float(request.POST.get('restecg')),
-#                 float(request.POST.get('thalach')),
-#                 float(request.POST.get('exang')),
-#                 float(request.POST.get('oldpeak')),
-#                 float(request.POST.get('slope')),
-#                 float(request.POST.get('ca')),
-#                 float(request.POST.get('thal'))
-#             ]
+#             age = float(request.POST.get('age'))
+#             sex = float(request.POST.get('sex'))
+#             cp = float(request.POST.get('cp'))
+#             trestbps = float(request.POST.get('trestbps'))
+#             chol = float(request.POST.get('chol'))
+#             fbs = float(request.POST.get('fbs'))
+#             restcg = float(request.POST.get('restecg'))
+#             thalach = float(request.POST.get('thalach'))
+#             exang = float(request.POST.get('exang'))
+#             oldpeak = float(request.POST.get('oldpeak'))
+#             slope = float(request.POST.get('slope'))
+#             ca = float(request.POST.get('ca'))
+#             thal = float(request.POST.get('thal'))
 
-#             # Convert list to numpy array for model prediction
-#             input_data = np.array(lis).reshape(1, -1)
+#             # Convert data to numpy array for model prediction
+#             # input_data = np.array([
+#             #     age, sex, cp, trestbps, chol, fbs, restcg, thalach, exang, oldpeak, slope, ca, thal
+#             # ]).reshape(1, -1)
 
-#             # Make prediction
-#             output1 = model.predict(input_data)
+#             # # Make prediction
+#             # output1 = model.predict(input_data)
 
-#             danger = 'high' if output1 == 1 else 'low'
-#             output1=output1[0]
+#             output1 = model.predict(np.array([age,sex,cp,trestbps,chol,fbs,restcg,thalach,exang,oldpeak,slope,ca,thal]).reshape(1,-1))
+
+#             danger = 'High' if output1 == 1 else 'Low'
+#             output1 = output1[0]
+
+#             # Save data to the database
+#             prediction_data = HeartData(
+#                 age=age,
+#                 sex=sex,
+#                 cp=cp,
+#                 trestbps=trestbps,
+#                 chol=chol,
+#                 fbs=fbs,
+#                 restcg=restcg,
+#                 thalach=thalach,
+#                 exang=exang,
+#                 oldpeak=oldpeak,
+#                 slope=slope,
+#                 ca=ca,
+#                 thal=thal,
+#                 owner = request.user,
+#                 probability = output1
+#             )
+#             prediction_data.save()
 #             # Render result template with prediction output
-#             return render(request, 'result.html', {'output1': output1, 'danger':danger})
+#             return render(request, 'result.html', {'output1': output1, 'danger': danger})
 
 #         # Render homepage if request method is not POST
 #         return render(request, 'homepage.html')
 
 #     # Redirect to sign-in page if user is not authenticated
 #     return redirect('signin')
-
-
 
 
 def Result(request):
