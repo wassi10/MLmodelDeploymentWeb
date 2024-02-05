@@ -11,6 +11,19 @@
 
     <link rel="stylesheet" href="static\css\register.css">
 
+    <style>
+        .input-elements{
+            position: relative;
+        }
+        .pass-icon{
+            position: absolute;
+            right: 12px;
+            height: 18px;
+            width: 24px;
+            bottom: 16px;
+            /* color: aqua; */
+        }
+    </style>
 </head>
 
 <body>
@@ -56,7 +69,7 @@
                             <label for="password1">Password <span class="required-mark">*</span></label>
                             <input type="password" name="password1" id="password1" placeholder="Password" required>
 
-                            <!-- <img src="static\img\pass-hide.png" onclick="pass()" class="pass-icon" id="pass-icon"> -->
+                            <img src="static\img\pass-hide.png" onclick="pass()" class="pass-icon" id="pass-icon">
 
                             <!-- {% if messages %}
                             {% for message2 in messages %}
@@ -68,6 +81,9 @@
                             <label for="password2">Confirm Password <span class="required-mark">*</span></label>
                             <input type="password" name="password2" id="password2" placeholder="Password Again"
                                 required>
+
+                            <img src="static\img\pass-hide.png" onclick="pass1()" class="pass-icon" id="pass-icon1">
+                            
                             <!-- {% if messages %}
                             {% for message3 in messages %}
                             <span>{{ message3 }}</span>
@@ -85,22 +101,8 @@
         </section>
     </header>
 
-    <!-- <script>
-        var a
-        function pass(){
-            if(a==1){
-                document.getElementById('password1').type='password1';
-                document.getElementById('pass-icon').src ='pass-hide.png';
-                a=0;
-            }
-            else
-            {
-                document.getElementById('password1').type='text';
-                document.getElementById('pass-icon').src ='pass-hide.png';
-                a=1; 
-            }
-        }
-    </script> -->
+    <script src="static\js\pass.js"></script>
+    <script src="static\js\pass1.js"></script>
 
 </body>
 
