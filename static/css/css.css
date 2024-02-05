@@ -266,14 +266,22 @@ footer hr {
     width: 45%;
     background: linear-gradient(141deg, #3A8EF6 0%, #6F3AFA 100%);
 }
-.about-bg img{
+/* .about-bg img{
     background: rgb(255, 255, 255);
     border: 5px solid rgb(255, 255, 255);
     width: 500px;
     margin-left: -10%;
     margin-top: 15%;
     box-shadow: 3px 3px 10px black;
-}
+} */
+.about-bg img {
+    background: #F2F7FF;
+    border: 15px solid #F2F7FF;
+    width: 490px;
+    margin-left: -8.5%;
+    margin-top: 13.5%;
+    box-shadow: 3px 3px 10px rgb(121, 113, 113);
+  }
 
 
 

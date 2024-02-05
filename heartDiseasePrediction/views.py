@@ -46,6 +46,7 @@ def Dashboard(request):
             # # Make prediction
             # output1 = model.predict(input_data)
 
+
             # Make prediction
             probabilities = model.predict_proba(np.array([age,sex,cp,trestbps,chol,fbs,restcg,thalach,exang,oldpeak,slope,ca,thal]).reshape(1,-1))
 
