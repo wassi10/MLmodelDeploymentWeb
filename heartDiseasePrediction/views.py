@@ -10,6 +10,15 @@ import joblib
 import re #regex
 
 
+
+
+from django.contrib.auth.tokens import default_token_generator
+from django.utils.http import urlsafe_base64_encode
+from django.utils.encoding import force_bytes
+from django.core.mail import send_mail
+from django.contrib.sites.shortcuts import get_current_site
+from django.template.loader import render_to_string
+
 def Welcome(request):
     if request.user.is_authenticated:
         return render(request, 'homepage.html')
@@ -215,7 +224,7 @@ def SignUp(request):
 
         # Define regex patterns for validation
         username_pattern = '^[a-zA-Z0-9_]*$'
-        email_pattern = '^[a-zA-Z0-9.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$'
+        email_pattern = '^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$'
         password_pattern = '(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$'
 
         # Check username format
@@ -265,39 +274,6 @@ def signout(request): # In order to logout from the website
 
 
 
-
-# Withour Regex
-
-# def SignUp(request):
-#     if request.method == 'POST':
-#         username = request.POST.get('username')
-#         email = request.POST.get('email')
-#         password1 = request.POST.get('password1')
-#         password2 = request.POST.get('password2')
-
-#         # Check if username already exists
-#         if User.objects.filter(username=username).exists():
-#             messages.info(request, 'Username is already taken')
-#             return redirect('signup')
-        
-#         # Check if email already exists
-#         elif User.objects.filter(email=email).exists():
-#             messages.info(request, 'Email is already registered')
-#             return redirect('signup')
-        
-#         # Check if passwords match
-#         elif password1 != password2:
-#             messages.info(request, 'Passwords do not match')
-#             return redirect('signup')
-
-#         else:
-#             # Create the user if all validations pass
-#             user = User.objects.create_user(username=username, email=email, password=password1)
-#             user.save()
-#             # messages.success(request, f'Account created for {username}. You can now log in!')
-#             return redirect('signin')
-
-#     return render(request, 'signup.html')
  
 
 
