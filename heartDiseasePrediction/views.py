@@ -7,6 +7,7 @@ from django.contrib.auth.decorators import login_required
 import numpy as np
 from .models import HeartData
 import joblib
+import re #regex
 
 
 def Welcome(request):
@@ -203,6 +204,8 @@ def SignIn(request):
 
 
 #For the user to resister or sign up.
+# username regex pattern '^[a-zA-Z0-9_]*$': myUsername, user123, user_name, User123_.username123
+
 def SignUp(request):
     if request.method == 'POST':
         username = request.POST.get('username')
@@ -210,8 +213,29 @@ def SignUp(request):
         password1 = request.POST.get('password1')
         password2 = request.POST.get('password2')
 
+        # Define regex patterns for validation
+        username_pattern = '^[a-zA-Z0-9_]*$'
+        email_pattern = '^[a-zA-Z0-9.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$'
+        password_pattern = '(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$'
+
+        # Check username format
+        if not re.match(username_pattern, username):
+            messages.info(request, 'Username must contain only letters, numbers, and underscores.')
+            return redirect('signup')
+        
+        # Check email format
+        elif not re.match(email_pattern, email):
+            messages.info(request, 'Invalid email format')
+            return redirect('signup')
+        
+        # Check password format
+        elif not re.match(password_pattern, password1):
+            messages.info(request, 'Password must be at least 8 characters with 1 digit, 1 lowercase, and 1 uppercase.')
+            # messages.info(request, 'Password must be at least 8 characters long and contain at least one digit, one lowercase letter, and one uppercase letter.')
+            return redirect('signup')
+
         # Check if username already exists
-        if User.objects.filter(username=username).exists():
+        elif User.objects.filter(username=username).exists():
             messages.info(request, 'Username is already taken')
             return redirect('signup')
         
@@ -242,9 +266,38 @@ def signout(request): # In order to logout from the website
 
 
 
+# Withour Regex
 
+# def SignUp(request):
+#     if request.method == 'POST':
+#         username = request.POST.get('username')
+#         email = request.POST.get('email')
+#         password1 = request.POST.get('password1')
+#         password2 = request.POST.get('password2')
 
+#         # Check if username already exists
+#         if User.objects.filter(username=username).exists():
+#             messages.info(request, 'Username is already taken')
+#             return redirect('signup')
+        
+#         # Check if email already exists
+#         elif User.objects.filter(email=email).exists():
+#             messages.info(request, 'Email is already registered')
+#             return redirect('signup')
+        
+#         # Check if passwords match
+#         elif password1 != password2:
+#             messages.info(request, 'Passwords do not match')
+#             return redirect('signup')
 
+#         else:
+#             # Create the user if all validations pass
+#             user = User.objects.create_user(username=username, email=email, password=password1)
+#             user.save()
+#             # messages.success(request, f'Account created for {username}. You can now log in!')
+#             return redirect('signin')
+
+#     return render(request, 'signup.html')
  
 
 

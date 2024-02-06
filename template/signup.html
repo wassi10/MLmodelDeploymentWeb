@@ -37,7 +37,7 @@
 
                     {% if messages %}
                     {% for message in messages %}
-                    <span style="color: white;">{{ message }}</span>
+                    <span style="color: rgb(191, 21, 21);">{{ message }}</span>
                     {% endfor %}
                     {% endif %}
 
@@ -60,7 +60,7 @@
                         </div>
                         <div class="input-elements">
                             <label for="email">E-mail <span class="required-mark">*</span></label>
-                            <input type="text" name="email" id="email" placeholder="E-mail" required>
+                            <input type="email" name="email" id="email" placeholder="E-mail" required>
                         </div>
                     </div>
 
@@ -83,7 +83,7 @@
                                 required>
 
                             <img src="static\img\pass-hide.png" onclick="pass1()" class="pass-icon" id="pass-icon1">
-                            
+
                             <!-- {% if messages %}
                             {% for message3 in messages %}
                             <span>{{ message3 }}</span>
