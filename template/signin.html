@@ -60,7 +60,7 @@
                         <label for="password">Password</label>
                         <input type="password" name="password" id="password" placeholder="Password" required>
 
-                        <img src="static\img\pass-hide.png" onclick="pass3()" class="pass-icon" id="pass-icon">
+                        <img src="static\img\eyeon.png" onclick="pass3()" class="pass-icon" id="pass-icon">
                     </div>
                 </div>
 
@@ -81,12 +81,12 @@
         function pass3() {
             if (c == 1) {
                 document.getElementById('password').type = 'password';
-                document.getElementById('pass-icon').src = 'static/img/pass-hide.png';
+                document.getElementById('pass-icon').src = 'static/img/eyeon.png';
                 c = 0;
             }
             else {
                 document.getElementById('password').type = 'text';
-                document.getElementById('pass-icon').src = 'static/img/pass-hide.png';
+                document.getElementById('pass-icon').src = 'static/img/eyeoff.png';
                 c = 1;
             }
         }</script>
