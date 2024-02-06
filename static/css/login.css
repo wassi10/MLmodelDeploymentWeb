@@ -100,3 +100,11 @@ h1 {
     background-color: #FFDC60;
     color: var(--gradient-1, linear-gradient(141deg, #3A8EF6 0%, #6F3AFA 100%));
 }
+
+.error-msg {
+    color: #eeeef5;
+    background: #b40606;
+    padding: 8px;
+    border-radius: 8px;
+    font-weight: 600;
+}

@@ -23,6 +23,13 @@
             bottom: 16px;
             /* color: aqua; */
         }
+        .error-msg {
+            color: #eeeef5;
+            background: #b40606;
+            padding: 8px;
+            border-radius: 8px;
+            font-weight: 600;
+        }
     </style>
 </head>
 
@@ -37,7 +44,7 @@
 
                     {% if messages %}
                     {% for message in messages %}
-                    <span style="color: rgb(191, 21, 21);">{{ message }}</span>
+                    <span class="error-msg">{{ message }}</span>
                     {% endfor %}
                     {% endif %}
 
