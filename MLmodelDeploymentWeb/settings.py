@@ -129,8 +129,8 @@ STATICFILES_DIRS = [
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
+DEFAULT_EMAIL_FROM = 'HDPS Team <heartpredictionsystem@gmail.com>'
 EMAIL_HOST_USER = 'heartpredictionsystem@gmail.com'
-EMAIL_HOST_PASSWORD = '@heart_prediction2024'
+EMAIL_HOST_PASSWORD = 'xnsr iojh tzfj nibj'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-DEFAULT_FROM_EMAIL = 'HDPS <heartpredictionsystem@gmail.com>'

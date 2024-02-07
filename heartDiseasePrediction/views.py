@@ -1,8 +1,9 @@
 # from multiprocessing import context
+from email.message import EmailMessage
 from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User, auth
-from django.contrib.auth import authenticate, login, logout # if we use auth, we don't require this library
+from django.contrib.auth import authenticate, login, logout, get_user_model # if we use auth, we don't require this library
 from django.contrib.auth.decorators import login_required
 import numpy as np
 from .models import HeartData
@@ -11,12 +12,18 @@ import re #regex
 
 # Email verification
 from django.contrib.sites.shortcuts import get_current_site
-from django.core.mail import send_mail
+from django.core.mail import EmailMessage, send_mail
 from django.template.loader import render_to_string
 
-# from django.contrib.auth.tokens import default_token_generator
-# from django.utils.http import urlsafe_base64_encode
-# from django.utils.encoding import force_bytes
+# from django.contrib.auth import get_user_model
+# from django.utils.encoding import force_text
+# from django.utils.encoding import smart_text
+
+from django.contrib.auth.tokens import default_token_generator
+from django.utils.encoding import force_bytes
+from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
+
+
 
 
 def Welcome(request):
@@ -206,10 +213,32 @@ def SignIn(request):
             auth.login(request,user)
             return redirect('dashboard')
         else:
-            messages.warning(request,'Invalid Credentials')
+            messages.warning(request,'Username or Password not match.')
             return redirect('signin')   
         
     return render(request, 'signin.html')
+
+
+
+# UserModel = get_user_model()
+User = get_user_model()
+def activate(request, uidb64, token):
+    
+    try:
+        uid = urlsafe_base64_decode(uidb64).decode()
+        user = User._default_manager.get(pk=uid)
+    except (TypeError, ValueError, OverflowError, User.DoesNotExist):
+        user = None
+
+    if user is not None and default_token_generator.check_token(user, token):
+        # Activate the user account
+        user.is_active = True
+        user.save()
+        messages.info(request, 'Your account has been activated.')
+        return redirect('signin')  
+    else:
+        messages.info(request, 'Activation link is invalid.')
+        return redirect('signup')  
 
 
 #For the user to resister or sign up.
@@ -240,7 +269,6 @@ def SignUp(request):
         # Check password format
         elif not re.match(password_pattern, password1):
             messages.info(request, 'Password must be at least 8 characters with 1 digit, 1 lowercase, and 1 uppercase.')
-            # messages.info(request, 'Password must be at least 8 characters long and contain at least one digit, one lowercase letter, and one uppercase letter.')
             return redirect('signup')
 
         # Check if username already exists
@@ -261,7 +289,27 @@ def SignUp(request):
         else:
             # Create the user if all validations pass
             user = User.objects.create_user(username=username, email=email, password=password1)
+            user.is_active = False  # Mark the user as inactive until email verification
             user.save()
+
+            # Send verification email
+            current_site = get_current_site(request)
+            mail_subject = 'Account Verification'
+            message = render_to_string('email_verification.html', {
+                'user': user,
+                'domain': current_site.domain,
+                'uid': urlsafe_base64_encode(force_bytes(user.pk)),
+                'token': default_token_generator.make_token(user),
+            })
+            # send_mail = email
+            # to_email = EmailMessage(mail_subject, message, to=[send_mail])
+            # to_email.send()
+
+            to_email = email
+            send_mail(mail_subject, message,'HDPS', [to_email])
+            messages.info(request, 'A verification email has been sent.')
+
+
             # messages.success(request, f'Account created for {username}. You can now log in!')
             return redirect('signin')
 
@@ -273,8 +321,6 @@ def signout(request): # In order to logout from the website
     return redirect('homepage')
 
 
-
- 
 
 
 
