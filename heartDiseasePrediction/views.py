@@ -15,15 +15,12 @@ from django.contrib.sites.shortcuts import get_current_site
 from django.core.mail import EmailMessage, send_mail
 from django.template.loader import render_to_string
 
-# from django.contrib.auth import get_user_model
-# from django.utils.encoding import force_text
-# from django.utils.encoding import smart_text
-
 from django.contrib.auth.tokens import default_token_generator
 from django.utils.encoding import force_bytes
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 
-
+def Forgot(request):
+    return render(request, 'forgot password\password_reset.html')
 
 
 def Welcome(request):
