@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital@0;1&family=Sora:wght@400;500;600;700;800&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+
+    --bg-color: #F2F7FF;
+    --footer-bg-color: #0A0E31;
+    --text-color: #6C87AE;
+    --gradient-1: #1678F2;
+
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+/* === Password Done === */
+
+.reset-pass-done {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #F2F7FF;
+}
+
+.password-sent {
+    position: absolute;
+    background: linear-gradient(141deg, #3A8EF6 0%, #6F3AFA 100%);
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px 4px #feca0c0b;
+    padding: 72px;
+}
+.password-sent h2{
+    color: white;
+    font-size: 2.6rem;
+}
+
+.password-sent p{
+    color: white;
+    margin-top: 1.3rem;
+    font-size: 1.5rem;
+}
