@@ -79,12 +79,12 @@ h1 {
     outline: 2px solid #FFDC60;
 }
 
-.input-elements.success input{
+/* .input-elements.success input{
     outline: 2px solid #46ff87;
 }
 .input-elements.error input{
     outline: 2px solid #FF5449;
-}
+} */
 
 .form>small{
     font-weight: 500;
