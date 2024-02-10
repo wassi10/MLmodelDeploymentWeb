@@ -48,7 +48,7 @@ html {
 }
 
 .input-elements input {
-    padding: 12px;
+    padding: 10px;
     font-size: 16px;
     font-weight: 500;
     color: #292930;
@@ -115,4 +115,19 @@ html {
 }
 
 /* === Reset Password Confirm === */
+.security ul {
+    margin-left: 2.8rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+
 /* === Reset Password Complete === */
+.back-login {
+    padding: .8rem;
+    border-radius: 10px;
+    box-shadow: 0px 8px 23px 0px rgba(147, 148, 150, 0.24);
+    background: #fff;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
