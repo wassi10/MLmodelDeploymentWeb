@@ -21,6 +21,13 @@ from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 
 def Forgot(request):
     return render(request, 'forgot password\password_reset.html')
+def Forgot1(request):
+    return render(request, 'forgot password\password_reset_done.html')
+def Forgot2(request):
+    return render(request, 'forgot password\password_reset_confirm.html')
+def Forgot3(request):
+    return render(request, 'forgot password\password_reset_complete.html')
+
 
 
 def Welcome(request):

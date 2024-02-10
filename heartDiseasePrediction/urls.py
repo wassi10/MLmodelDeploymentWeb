@@ -15,4 +15,7 @@ urlpatterns = [
     path('DoctorAndHospital', views.DoctorAndHospital , name='DoctorAndHospital'),
 
     path('forgot', views.Forgot , name='forgot'),
+    path('forgot1', views.Forgot1 , name='forgot1'),
+    path('forgot2', views.Forgot2 , name='forgot2'),
+    path('forgot3', views.Forgot3 , name='forgot3'),
 ]
