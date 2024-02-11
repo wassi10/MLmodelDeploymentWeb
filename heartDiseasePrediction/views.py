@@ -35,6 +35,11 @@ def Welcome(request):
         return render(request, 'homepage.html')
     return render(request, 'index.html')
 
+def Analysis(request):
+    if request.user.is_authenticated:
+        return render(request, 'homepage.html')
+    return render(request, 'analysis.html')
+
 
 @login_required(login_url='signin')
 

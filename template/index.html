@@ -28,8 +28,6 @@
       <a href="#about" class="text-decoration-none">About</a>
       <a href="#ourTeam" class="text-decoration-none">Our Team</a>
 
-      <!-- onclick="window.location.href='login.html';" -->
-
       <a href="{% url 'signin' %}" class="login-btn">Sign In</a>
     </nav>
 
@@ -46,7 +44,7 @@
         distinctio animi eveniet tempore soluta, accusantium eligendi quia explicabo accusamus odio aliquam
         officiis at dolore ab.</p>
 
-      <a href="#" class="text-decoration-none"> % Predict Now</a>
+      <a href="{% url 'signin' %}" class="text-decoration-none"> % Predict Now</a>
 
     </div>
 
@@ -69,11 +67,17 @@
         </div>
         <div class="articles">
           <h2>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio laborum eius impedit facilis ducimus accusamus beatae labore error tempore et nam fugit modi at dolorem sint, earum dignissimos esse dolores ipsa voluptates veniam soluta! Quos, quo minima iure itaque aperiam explicabo, consectetur quibusdam quam, assumenda porro architecto. Vel libero odio rerum necessitatibus voluptate illo neque, obcaecati at provident impedit minus laboriosam officia nam ipsa nobis hic rem eius iusto, quasi error quaerat. Nihil saepe est mollitia nam et. Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident atque nesciunt quas ipsum hic aut earum, repellendus odit eius ullam. Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+          <p>This diagram delineates a meticulously structured methodology aimed at evaluating the effectiveness of a
+            proposed approach for heart disease prediction, leveraging Kaggle datasets and a sequence of analytical
+            techniques. Beginning with data collection and preprocessing to ensure data quality, the study progresses
+            through Exploratory Data Analysis (EDA) to glean insights into the dataset's composition and distribution.
+            Feature engineering techniques, including Principal Component Analysis (PCA) and L1 regularization (Lasso),
+            are employed to enhance model performance by identifying critical features. Subsequently, the datasets are
+            partitioned for model
           </p>
-          <a href="" class="see-more">See More</a>
+          <a href="{% url 'analysis' %}" class="see-more">See More</a>
         </div>
-        
+
       </div>
 
     </div>
@@ -86,10 +90,19 @@
 
       <div class="details">
         <h1>About us</h1>
-        <p>The system focuses on predicting heart disease using a user-centric approach. Users input symptoms and details, and the system uses MLP algorithms to assess risk. If positive, it offers proactive guidance on healthcare professionals and facilities, and tips for prevention and maintenance. If no heart disease is predicted, it assures the absence and quantifies the likelihood. Following the prediction, the system generates a comprehensive "Prediction Report," offering users a detailed overview of their health status. <br> <br>
-        Any person with a browser and access to the internet can utilize the Heart Disease Prediction System. If you want to anticipate cardiac illness using HDPS, all you have to do is provide exact values for 13 various parameters that the algorithm asks about, such as age, sex, and so on. CDPS will then calculate the probability of developing heart disease. To preserve data for future use and receive help, sign up for the system that includes these capabilities.
-          </p>
-        
+        <p>The system focuses on predicting heart disease using a user-centric approach. Users input symptoms and
+          details, and the system uses MLP algorithms to assess risk. If positive, it offers proactive guidance on
+          healthcare professionals and facilities, and tips for prevention and maintenance. If no heart disease is
+          predicted, it assures the absence and quantifies the likelihood. Following the prediction, the system
+          generates a comprehensive "Prediction Report," offering users a detailed overview of their health status. <br>
+          <br>
+          Any person with a browser and access to the internet can utilize the Heart Disease Prediction System. If you
+          want to anticipate cardiac illness using HDPS, all you have to do is provide exact values for 13 various
+          parameters that the algorithm asks about, such as age, sex, and so on. CDPS will then calculate the
+          probability of developing heart disease. To preserve data for future use and receive help, sign up for the
+          system that includes these capabilities.
+        </p>
+
       </div>
 
       <div class="about-bg">
@@ -172,16 +185,16 @@
       <div class="footer-content">
         <h2 class="footer-title">Navigation</h2>
         <div class="footer-navi">
-          <div><a href="">Home</a></div>
-          <div><a href="">Analysis</a></div>
-          <div><a href="">Help</a></div>
-          <div><a href="">Our Team</a></div>
+          <div><a href="#home">Home</a></div>
+          <div><a href="#analysis">Analysis</a></div>
+          <div><a href="#about">About</a></div>
+          <div><a href="#ourTeam">Our Team</a></div>
         </div>
       </div>
 
       <div class="footer-content">
         <h2 class="footer-title">Contact Info</h2>
-        <p>wassikhadiza@gmail.com</p>
+        <p>heartpredictionsystem@gmail.com</p>
         <p>+8801688732682</p>
       </div>
 
@@ -190,7 +203,7 @@
     <p class="copyright">Copyright © Heart DP. 2023</p>
   </footer>
 
-  
+
   <!-- === Sticky Navbar === -->
   <!-- <script src="static/js/main.js"></script> -->
   <script>
