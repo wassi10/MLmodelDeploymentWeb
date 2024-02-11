@@ -7,6 +7,39 @@
     <title>HDPS</title>
     <link rel="stylesheet" href="static/css/css.css" />
     <link rel="stylesheet" href="static/css/analysis.css">
+
+    <style>
+        .analysis .eda {
+            padding-top: 5rem;
+        }
+
+        .analysis .eda h2 {
+            font-size: 3rem;
+            color: #1678F2;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 1.5rem;
+        }
+
+        .analysis .eda p {
+            font-size: 1.4rem;
+            /*  */
+        }
+
+        .eda-card {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+        .eda-card div{
+            box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.2);
+            padding: 25px 25px;
+            background: #eee;
+            width: 65%;
+        }
+    </style>
 </head>
 
 <body>
@@ -51,7 +84,68 @@
                     border-bottom: 2px solid #4badd6;
                     font-weight: 600;">
 
-            
+            <div class="eda">
+                <h2>Exploratory Data Analysis</h2>
+                <p style="margin-bottom: 4.5rem;">To detect trends in the datasets, we use visualizations such as charts and
+                    heatmap graphs. The data will be thoroughly examined, with each revelation scrutinized. We use two
+                    heart-related datasets - Public Health Dataset and Heart Attack Dataset. Public Health Dataset
+                    comprises 1025 patient records, with a detailed breakdown revealing 499 instances of individuals
+                    classified
+                    as healthy and 526 diagnosed with heart disease. Out of the total, 713 patients are male, with 413
+                    being healthy and 300 having heart disease. On the other hand, there are 312 female patients, among
+                    which 86 are healthy, and 226 have heart disease. In Heart Attack Dataset, consisting of 303 patient
+                    records. Here, 138 individuals are classified as healthy, while 165 have been diagnosed with heart
+                    disease. The male cohort, constituting 207 patients, is further categorized into 114 healthy
+                    individuals and 93
+                    with heart disease. Simultaneously, the female demographic,
+                    totaling 96 patients, is stratified into 24 healthy individuals
+                    and 72 with heart disease.These datasets offer the framework
+                    for a full exploratory data study, providing important insights
+                    into health patterns across genders.</p>
+                <div class="eda-card">
+                    <div>
+                        <p>gender_variable = 'sex' <br>
+
+                            # Calculate the number of male patients <br>
+                            male_patients = df[df[gender_variable] == 1].shape[0] <br>
+                            female_patients = df[df[gender_variable] == 0].shape[0] <br>
+                            print(f'Number of male patients: {male_patients}') <br>
+                            print(f'Number of female patients: {female_patients}') <br> <br>
+    
+    
+                            target_variable = 'target' <br>
+                            healthy_patients = df[df[target_variable] == 0].shape[0] <br>
+                            print(f'Number of healthy patients: {healthy_patients}') <br>
+                            disease = 1025 - healthy_patients <br>
+                            print(f'Number of unhealhty: {disease}') <br> <br>
+    
+    
+    
+                            # Calculate the number of male healthy patients <br>
+                            male_healthy_patients = df[(df[target_variable] == 0) & (df[gender_variable] == 1)].shape[0]
+                            <br>
+                            print(f'Number of male healthy patients: {male_healthy_patients}') <br> <br>
+    
+                            # Calculate the number of female healthy patients <br>
+                            female_healthy_patients = df[(df[target_variable] == 0) & (df[gender_variable] == 0)].shape[0]
+                            <br>
+                            print(f'Number of female healthy patients: {female_healthy_patients}')
+                            <br> <br>
+    
+                            # Unhealthy patient male <br>
+                            male_unhealthy_patients = df[(df[target_variable] == 1) & (df[gender_variable] == 1)].shape[0]
+                            <br>
+                            print(f'Male unhealthy patients: {male_unhealthy_patients}') <br> <br>
+    
+    
+                            # Calculate the number of female unhealthy patients <br>
+                            female_unhealthy_patients = df[(df[target_variable] == 1) & (df[gender_variable] == 0)].shape[0]
+                            <br>
+                            print(f'Female unhealthy patients: {female_unhealthy_patients}')
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
