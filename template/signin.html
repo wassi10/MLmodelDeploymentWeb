@@ -64,7 +64,7 @@
                     </div>
                 </div>
 
-                <small id="forgot-pass" style="color: #f9f9f9;"><a href="{% url 'password_reset' %}" style="text-decoration: none;">Forgot
+                <small id="forgot-pass" style="color: #f9f9f9;"><a href="{% url 'reset_password' %}" style="text-decoration: none;">Forgot
                         Password?</a></small>
 
                 <small>Don't Have An Account? <span id="purple-signin"><a href="{% url 'signup' %}"
@@ -97,3 +97,5 @@
 </body>
 
 </html>
+
+<!-- {% url 'password_reset_confirm' 'uidb64' 'token' %} -->
