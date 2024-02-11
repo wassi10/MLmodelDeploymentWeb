@@ -38,6 +38,7 @@
             padding: 25px 25px;
             background: #eee;
             width: 65%;
+            margin-bottom: 6rem;
         }
     </style>
 </head>
@@ -111,16 +112,13 @@
                             female_patients = df[df[gender_variable] == 0].shape[0] <br>
                             print(f'Number of male patients: {male_patients}') <br>
                             print(f'Number of female patients: {female_patients}') <br> <br>
-    
-    
+       
                             target_variable = 'target' <br>
                             healthy_patients = df[df[target_variable] == 0].shape[0] <br>
                             print(f'Number of healthy patients: {healthy_patients}') <br>
                             disease = 1025 - healthy_patients <br>
-                            print(f'Number of unhealhty: {disease}') <br> <br>
-    
-    
-    
+                            print(f'Number of unhealhty: {disease}') <br> <br>  
+        
                             # Calculate the number of male healthy patients <br>
                             male_healthy_patients = df[(df[target_variable] == 0) & (df[gender_variable] == 1)].shape[0]
                             <br>
@@ -136,8 +134,7 @@
                             male_unhealthy_patients = df[(df[target_variable] == 1) & (df[gender_variable] == 1)].shape[0]
                             <br>
                             print(f'Male unhealthy patients: {male_unhealthy_patients}') <br> <br>
-    
-    
+       
                             # Calculate the number of female unhealthy patients <br>
                             female_unhealthy_patients = df[(df[target_variable] == 1) & (df[gender_variable] == 0)].shape[0]
                             <br>
