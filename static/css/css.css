@@ -82,18 +82,6 @@ html {
     color: var(--text-color);
 }
 
-/* .signup-btn {
-    margin-left: 1rem;   
-    font-size: 1.5rem;
-    font-weight: 500; 
-    padding: 0.5rem 1rem;
-    border-radius: 6.25rem;
-    border: 1px solid #6C87AE;    
-    background: transparent;
-    color: var(--text-color);
-} */
-
-
 section{
     min-height: 100vh;
     padding: 10rem 9% 2rem;
@@ -269,14 +257,7 @@ footer hr {
     width: 40%;
     background: linear-gradient(141deg, #3A8EF6 0%, #6F3AFA 100%);
 }
-/* .about-bg img{
-    background: rgb(255, 255, 255);
-    border: 5px solid rgb(255, 255, 255);
-    width: 500px;
-    margin-left: -10%;
-    margin-top: 15%;
-    box-shadow: 3px 3px 10px black;
-} */
+
 .about-bg img {
     background: #F2F7FF;
     border: 15px solid #F2F7FF;
@@ -363,15 +344,15 @@ footer hr {
 }
 
 /* Responsive */
-@media screen and (max-width: 1200px ){
+/* @media screen and (max-width: 1200px ){
     html{
         font-size: 55%;
      }
     .team-card{
         margin-bottom: 8rem;
     }
-}
-@media screen and (max-width: 1000px ){
+} */
+/* @media screen and (max-width: 1000px ){
     .team-card{
         grid-template-columns: repeat(3, 1fr);
         margin-bottom: 8rem;
@@ -386,4 +367,4 @@ footer hr {
     .team-card{
         grid-template-columns: repeat(1, 1fr);
     }
-}
+} */

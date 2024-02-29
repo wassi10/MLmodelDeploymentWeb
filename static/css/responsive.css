@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital@0;1&family=Sora:wght@400;500;600;700;800&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+
+    --bg-color: #F2F7FF;
+    --footer-bg-color: #0A0E31;
+    --text-color: #6C87AE;
+    --gradient-1: #1678F2;
+
+}
+
+#check {
+    display: none;
+}
+
+.icons {
+    position: absolute;
+    right: 5%;
+    font-size: 3rem;
+    color: var(--gradient-1, linear-gradient(141deg, #3A8EF6 0%, #6F3AFA 100%));
+    cursor: pointer;
+    display: none;
+}
+
+@media (max-width: 1200px) {
+    html {
+        font-size: 50%;
+    }
+
+    .team-card {
+        margin-bottom: 8rem;
+    }
+
+    .home-content-bg img {
+        height: auto;
+        width: 400px;
+    }
+
+    .about-bg img {
+        width: 350px;
+    }
+
+    #about .about-bg {
+        margin-bottom: 10rem;
+        height: 370px;
+    }
+}
+
+
+
+@media (max-width: 991px) {
+    html {
+        font-size: 45%;
+    }
+
+    .header {
+        padding: 2rem 4%;
+    }
+
+    section {
+        padding: 10rem 4% 2rem;
+    }
+
+    .home {
+        padding: 0 4%;
+    }
+
+    .footer {
+        padding: 2rem 4%;
+    }
+
+    .team-card {
+        grid-template-columns: repeat(3, 1fr);
+        margin-bottom: 8rem;
+    }
+
+    .analysis-content {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .analysis-bg img {
+        height: 400px;
+        width: 100%;
+    }
+
+    .articles {
+        text-align: center;
+    }
+
+    .home-content-bg img {
+        height: auto;
+        width: 300px;
+    }
+
+    .about-bg img {
+        width: 350px;
+    }
+}
+
+@media (max-width: 768px) {
+    .icons {
+        display: inline-flex;
+    }
+
+    #check:checked~.icons #menu-icon {
+        display: none;
+    }
+
+    .icons #close-icon {
+        display: none;
+    }
+
+    #check:checked~.icons #close-icon {
+        display: block;
+    }
+
+    .navbar {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 0;
+        background: linear-gradient(141deg, #3A8EF6 0%, #6F3AFA 100%);
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
+        overflow: hidden;
+        transition: .25s ease;
+        transition-delay: .25s;
+    }
+
+    #check:checked~.navbar {
+        height: 27rem;
+    }
+
+    .navbar a {
+        display: block;
+        font-size: 2rem;
+        margin: 1.1rem 0;
+        text-align: center;
+        color: white;
+    }
+
+    .login-btn {
+        width: 90px;
+        border: 1px solid #fbfbfb;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .home {
+        gap: 8rem;
+    }
+
+    .home-content h1 {
+        font-size: 3.5rem;
+    }
+
+    .team-card {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .analysis-content .articles a {
+        margin-bottom: 10px;
+    }
+
+    .about-bg img {
+        width: 250px;
+        margin-top: 12rem;
+    }
+}
+
+@media (max-width: 425px) {
+    .home {
+        flex-direction: column-reverse;
+        gap: 2rem;
+    }
+
+    .home-content {
+        text-align: center;
+        align-items: center;
+        padding-bottom: 5rem;
+    }
+
+    .home-content-bg img {
+        width: 250px;
+    }
+
+    .home-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .team-card {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    #about .about {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #about .about-bg {
+        width: 100%;
+    }
+
+    .about-bg img {
+        width: 100%;
+        margin-top: 5rem;
+        margin-left: 0;
+    }
+
+    .analysis .analysis-title h1 {
+        font-size: 30px;
+    }
+
+    .details h1 {
+        font-size: 30px;
+    }
+
+    #about {
+        padding-block: 20px;
+    }
+
+    #about .about .details {
+        width: 100%;
+    }
+
+    #about .about {
+        gap: 2.5rem;
+    }
+    #ourTeam .title h1{
+        font-size: 30px;
+    }
+    #row .title p{
+        font-size: 9px;
+    }
+}
