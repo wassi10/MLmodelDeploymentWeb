@@ -12,10 +12,11 @@
     <link rel="stylesheet" href="static\css\register.css">
 
     <style>
-        .input-elements{
+        .input-elements {
             position: relative;
         }
-        .pass-icon{
+
+        .pass-icon {
             position: absolute;
             right: 12px;
             height: 18px;
@@ -23,6 +24,7 @@
             bottom: 16px;
             /* color: aqua; */
         }
+
         .error-msg {
             color: #eeeef5;
             background: #b40606;
@@ -103,8 +105,39 @@
         </section>
     </header>
 
-    <script src="static\js\pass.js"></script>
-    <script src="static\js\pass1.js"></script>
+    <script>
+        var a
+        function pass() {
+            if (a == 1) {
+                document.getElementById('password1').type = 'password';
+                document.getElementById('pass-icon').src = 'static/img/eyeon.png';
+                a = 0;
+            }
+            else {
+                document.getElementById('password1').type = 'text';
+                document.getElementById('pass-icon').src = 'static/img/eyeoff.png';
+                a = 1;
+            }
+        }
+
+
+        var b
+        function pass1() {
+            if (b == 1) {
+                document.getElementById('password2').type = 'password';
+                document.getElementById('pass-icon1').src = 'static/img/eyeon.png';
+                b = 0;
+            }
+            else {
+                document.getElementById('password2').type = 'text';
+                document.getElementById('pass-icon1').src = 'static/img/eyeoff.png';
+                b = 1;
+            }
+        }
+    </script>
+    <!-- <script src="static\js\pass.js"></script> -->
+    <!-- <script src="static\js\pass.js"></script>
+    <script src="static\js\pass1.js"></script> -->
 
 </body>
 
