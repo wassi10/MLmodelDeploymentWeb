@@ -108,6 +108,9 @@
     .about-bg img {
         width: 350px;
     }
+    footer{
+        padding-top: 20px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -244,10 +247,32 @@
     #about .about {
         gap: 2.5rem;
     }
+
+    #about .about .details{
+        text-align: center;
+    }
+
     #ourTeam .title h1{
         font-size: 30px;
+        text-align: center;
     }
     #row .title p{
         font-size: 9px;
+    }
+    footer {
+        height: 33rem;    
+    }
+    .footer{
+        display: flex;
+        flex-direction: column;
+    }
+    .footer-navi{
+        padding-top: 0;
+    }
+    .footer-content{
+        padding-bottom: 2rem;
+    }
+    footer hr{
+        margin-top: 0;
     }
 }

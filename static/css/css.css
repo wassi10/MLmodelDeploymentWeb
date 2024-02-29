@@ -283,12 +283,7 @@ footer hr {
     letter-spacing: 1.5px;
     color: var(--gradient-1, linear-gradient(141deg, #3A8EF6 0%, #6F3AFA 100%));
 }
-/* .row .title h1{
-    font-size: 40px;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    color: var(--gradient-1, linear-gradient(141deg, #3A8EF6 0%, #6F3AFA 100%));
-} */
+
 .row .title p{
     font-size: 18px;
     margin: 15px 0px;
@@ -343,28 +338,3 @@ footer hr {
     line-height: 1.5;
 }
 
-/* Responsive */
-/* @media screen and (max-width: 1200px ){
-    html{
-        font-size: 55%;
-     }
-    .team-card{
-        margin-bottom: 8rem;
-    }
-} */
-/* @media screen and (max-width: 1000px ){
-    .team-card{
-        grid-template-columns: repeat(3, 1fr);
-        margin-bottom: 8rem;
-    }
-}
-@media screen and (max-width: 768px ){
-    .team-card{
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-@media screen and (max-width: 520px ){
-    .team-card{
-        grid-template-columns: repeat(1, 1fr);
-    }
-} */
