@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital@0;1&family=Sora:wght@400;500;600;700;800&display=swap');
+
+
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+} */
+
+:root {
+
+    --bg-color: #F2F7FF;
+    --footer-bg-color: #0A0E31;
+    --text-color: #6C87AE;
+    --gradient-1: #1678F2;
+
+}
+
+
+@media (max-width: 1200px) {
+    html {
+        font-size: 50%;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    .input-elements {
+        width: 280px;
+    }
+
+    .input-elements label {
+        font-size: 15px;
+    }
+
+    .input-elements input {
+        padding: 10px;
+        font-size: 16px;
+
+    }
+
+    .btn-primary {
+        padding: 12px 0;
+        font-size: 16px;
+        width: 280px;
+    }
+}
+
+
+
+@media (max-width: 991px) {
+    .input-elements {
+        width: 250px;
+    }
+
+}
+
+@media (max-width: 768px) {
+   
+
+    h1 {
+        font-size: 28px;
+    }
+
+    .input-elements label {
+        font-size: 13px;
+    }
+
+    .input-elements input {
+        padding: 9px;
+        font-size: 14px;
+    }
+
+    .btn-primary {
+        padding: 10px 0;
+        font-size: 16px;
+        width: 230px;
+    }
+
+}
+
+@media (max-width: 425px) {
+
+
+    .form,
+    .name-email,
+    .security {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+    .input-elements input {
+       width: 100%;
+    }
+}
